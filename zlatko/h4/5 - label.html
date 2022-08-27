@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>label</title>
+</head>
+<body>
+<script>
+    outerloop:
+        for(var i=0;i<10;i++)
+        {
+            innerloop:
+                for(var j=0;j<10;j++)
+                {
+                    if(j>3) break;              // breaks the inner loop
+                    if(i==2) break innerloop;   // breaks the inner loop
+                    if(i==4) break outerloop;   // breaks the outer loop
+                    document.write("i = "+i+" j = "+j+ "<br>");
+                }
+        }
+    document.write("FINAL i = "+i+ ", j = "+j+"<br>");
+</script>
+
+</body>
+</html>

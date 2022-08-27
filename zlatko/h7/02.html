@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript - 2</title>
+</head>
+<body>
+
+<p>Hello World!</p>
+
+<div id="main">
+    <p>The DOM is very useful.</p>
+    <p>This example demonstrates the <b>getElementsByTagName</b> method.</p>
+</div>
+
+<script>
+    var x = document.getElementById("main");
+    var y = x.getElementsByTagName("p");
+    console.log(y);
+    document.write('First paragraph inside "main" is ' + y[0].innerHTML); //The DOM is very useful.
+    document.write('<br>Second paragraph inside "main" is ' + y[1].innerHTML);//This example demonstrates the getElementsByTagName method.
+    document.write('<br>' + x.innerHTML);//egesz main
+</script>
+
+</body>
+</html>

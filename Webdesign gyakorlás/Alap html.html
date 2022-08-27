@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<form method="POST">
+  <fieldset> //urlap elemek csoportositasa
+    <legend>Cim</legend>
+    <ul>
+      <li>
+        <input type="text"> //szoveges mezo
+      </li>
+      <li>
+        <input type="email">  //email megadasa
+      </li>
+      <li>
+        <input type="password"> //jelszo megadasa
+      </li>
+      <li>
+        <input type="tel"> //telefonszam megadasa
+      </li>
+      <li>
+        <input type="file"> //file megadasa
+      </li>
+      <li>
+        <input type="submit" value="gomb_neve"> // gomb megadasa
+      </li>
+      <li>
+        <select> //felsorolas
+          <option>piros</option>
+          <option>kek</option>
+          <option>sarga</option>
+        </select>
+      </li>
+      <li>
+        <select>
+          <optgroup label="Olasz autok">
+            <option> Fiat</option>
+          </optgroup>
+        </select>
+      </li>
+      <li>
+        <textarea cols="10"></textarea> //szovegdoboz
+        <textarea cols="100" rows="40"></textarea> //szovegdoboz
+      </li>
+      <li>
+        <progress value="30" max="100"></progress>
+      </li>
+      <li>
+        <button>Gomb</button>
+      </li>
+      <li>
+        <label for="date">Datum</label>
+        <input type="checkbox" id="date">
+        //id alapjan ossze tudjuk  kapcsolni a labelt az inputtal
+      </li>
+      <li>
+        <label for="első">Elso</label><input type="radio" name="valassz" value="elso" id="első">
+        <label for="második">Masodik</label><input type="radio" name="valassz" value="masodik" id="második">
+        <label for="harmadik">Harmadik</label><input type="radio" name="valassz" value="harmadik" id="harmadik">
+        <!--            id alapjan ossze lehet kotni a labellel. value erteket ad neki. a name ossze kotti a tobbi radio buttonnal. a label segit hogy ha a nevere kattintunk akkor akkor is bejeloli-->
+      </li>
+    </ul>
+  </fieldset>
+</form>
+
+<nav>
+  Navigacio
+</nav>
+<hr>
+
+
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<head>
+<title>JavaScript</title>
+
+    <script type="text/javascript">
+
+        function myFunction()
+        {
+            var data = parseInt(prompt("Enter your age"));
+           if(!isNaN(data))
+            document.getElementById("message").innerHTML = data;
+            else
+            {
+                if(confirm('do you want to try again'))
+                myFunction();
+            }
+        }
+
+        /*
+                  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number/isNaN
+         */
+    </script>
+
+</head>
+<body onload="myFunction()">
+
+<p id="message"></p>
+
+</body>
+</html>

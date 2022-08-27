@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 6</title>
+</head>
+
+<body>
+
+<script>
+
+
+
+    /*
+
+
+    JavaScript has three kinds of variable declarations.
+
+
+    var
+
+    Declares a variable, optionally initializing it to a value.
+
+
+    let
+
+    Declares a block-scoped, local variable, optionally initializing it to a value.
+
+
+    const
+
+    Declares a block-scoped, read-only named constant.
+
+
+
+     */
+
+    const MY_SCHOOL = 'Subotica Tech'; //const - nagybetukkel kell irni
+    // MY_SCHOOL = 'VTS';
+
+    if (10 < 20) {
+        const language = 'JS!'; //belul lett definialva csak belul letezik
+        document.write(language + "<br>"); //ezt irja ki elosszor
+    }
+
+    var language = 'JS'; //ezt irja ki masodszor
+
+    document.write(language);
+
+    //const CITY;
+
+    //CITY = 'Subotica';
+
+    const car = {type: "Ford", model: "Focus", color: "blue"}; //objektum
+
+    car.color = "blue metallic"; //felulirja a colort
+
+    car.year = 2019; //hozzaadja az evet
+
+    console.log(car);
+
+    const car2 = {type:"Ford", model:"Mondeo", color:"blue"};
+
+    // car2 = {type:"Ford", model:"Focus New", color:"green"}; //megprobalja az egesz objektumot felulirni, de nem lehet az egeszet   let vagy varral mukodne
+</script>
+
+</body>
+
+</html>

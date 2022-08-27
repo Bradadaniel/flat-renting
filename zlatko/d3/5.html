@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 5</title>
+    <script>
+        function myFunction() {
+            document.getElementById("my-link").onclick = goToVts('Ezekiel'); //kiirja Ezekiel, welcome to VTS!
+        }
+
+/*
+                function goToVts(word) { //atiranyit, nem mukodik
+                    alert(word + ", welcome to VTS!");
+                    return false;
+                }
+
+        */
+        function goToVts(word) {
+            return function () {
+                alert(word + ", welcome to VTS!");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body onload="myFunction()">
+<a id="my-link" href="http://www.vts.su.ac.rs/">My link</a>
+</body>
+</html>

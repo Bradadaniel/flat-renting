@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7 - string to number</title>
+
+    <script>
+
+        var myStr = "55";
+        var myStr1 = "55.243 number";
+        var myNum = "21" * "2";
+        var myNum1 = 2 * " 2";
+
+        var myNum2 = parseInt(myStr);
+        var myNum3 = parseFloat(myStr1);
+        var myNum4 = myStr - 0;
+
+        console.log(myNum, myNum1, myNum2, myNum3, myNum4);
+        console.log(typeof(myNum), typeof(myNum1), typeof(myNum2), typeof(myNum3), typeof(myNum4));
+
+        var v1 = "ff";
+        var v2 = "0xff";
+        var v3 = "11";
+
+        var myNum5 = Number(v1);
+        var myNum6 = Number(v2);
+        var myNum7 = Number(v3);
+
+
+       console.log(myNum5, myNum6, myNum7);
+
+        document.write("v1: " + parseInt(v1, 16) + "<br>");
+        document.write("v2: " + parseInt(v2, 16) + "<br>");
+        document.write("v3: " + parseInt(v3, 8) + "<br>");
+        document.write("v4: " + parseInt(v3, 2) + "<br>");
+
+        document.write('<hr>');
+
+        document.write("v1: " + parseFloat(v1) + "<br>");
+        document.write("v2: " + parseFloat(v2) + "<br>");
+        document.write("v3: " + parseFloat(v3) + "<br>");
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

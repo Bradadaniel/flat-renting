@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>function 4</title>
+</head>
+<body>
+<script>
+    var firstObject = {
+        name: 'vts',
+        email : 'something@vts.su.ac.rs'
+    }
+
+    var firstValue = 12;
+
+    console.log(firstValue);
+    console.log(firstObject);
+
+    secondFunction(firstObject);
+    console.log(firstObject);
+
+    firstFunction(firstValue);
+
+    function firstFunction(firstValue) {
+        firstValue = 14;
+    }
+    function secondFunction(firstObject) {
+        firstObject.email = "webmaster@vts.su.ac.rs";
+    }
+    console.log(firstValue);
+</script>
+
+</body>
+</html>

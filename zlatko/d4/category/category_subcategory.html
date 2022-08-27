@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+
+    <style>
+        #subCategory {
+            display: none;
+
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        #label2 {
+            display: none;
+        }
+    </style>
+
+
+    <script>
+        // 'use strict';
+        var category = ['first', 'second', 'third'];
+        var subCategory = [[1, 2], [2, 4, 5], [3, 4, 5]];
+
+
+        function myFunction(obj) {
+            var text = "";
+            var value = obj.value;
+
+            if (value !== 'choose') {
+                let  position = category.indexOf(value);//0
+                document.getElementById('subCategory').style.display = 'inline';
+                var i = 0;
+                while (subCategory[position][i]) {
+                    text += '<option value="' + subCategory[position][i] + '">' + subCategory[position][i] + '</option>';
+                    i++;
+                }
+                // subCategory[0][1]
+                document.getElementById('subCategory').innerHTML = text;
+                document.getElementById('subCategory').disabled = false;
+                document.getElementById('label2').style.display = 'inline';
+            } else {
+                document.getElementById('subCategory').disabled = true;
+                document.getElementById('subCategory').style.display = 'none';
+                document.getElementById('label2').style.display = 'none';
+            }
+        }
+    </script>
+
+</head>
+<body>
+<form name="category_form">
+    <label for="category">category: </label>
+    <select name="category" id="category" onchange="myFunction(this)">
+        <script>
+            document.write('<option value="choose">choose</option>');
+            for (var i = 0; i < category.length; i++) {
+                document.write('<option value="' + category[i] + '">' + category[i] + '</option>');
+            }
+
+        </script>
+
+    </select>
+    <label id="label2" for="subCategory">sub category: </label>
+    <select name="subCategory" id="subCategory">
+
+    </select>
+    <input type="submit" value="send"/>
+</form>
+
+</body>
+</html>

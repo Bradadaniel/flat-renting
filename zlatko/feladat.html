@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--Az " n2a4t5u55re sPo12r54t FUNN98y sea2 sumMer " értékű stringTemp változóból törölje a szóközt a szöveg elején és végén, és alakítsa át az összes karaktert kisbetűssé.
+Írja be az új szöveget a string változóba.
+
+Hozzon létre egy getNewString függvényt, amely a string változó értékét veszi paraméterként. A getNewString függvénynek  a string változóból ki kell bontania az
+összes szám karaktert. Ezeket a karaktereket egyetlen karakterláncként kell egyesítenie, és a stringNumbers változóba kell helyeznie.
+
+A többi karaktert karakterláncként kell egyesíteni és össze kell rakni a stringNotNumbers változóban. A függvény visszatérési értékének olyan objektumnak kell lennie,
+amelynek négy tulajdonsága van: stringNumbers és stringNotNumbers, amelyek értékeket tartalmaznak az azonos nevű változókból, valamint a stringNumbersLength és
+stringNotNumbsLength, amelyek a karakterláncok hosszának értékét tartalmazzák.
+
+A funkció végrehajtása és az értékek beszerzése után nyomtassa ki az összes tulajdonságot és a megfelelő értékeket.
+
+
+Segítség:
+
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String
+
+let s = " ";
+console.log(isNaN(s)); // false
+console.log(isNaN(parseInt(s))); // true -->
+<script>
+    var stringTemp = " n2a4t5u55re sPo12r54t FUNN98y sea2 sumMer ";
+
+    var string = stringTemp.trim(); // elejen vegen levagja a spacet
+
+    var string = stringTemp.toLowerCase(); //kisbetu
+
+
+
+    function getNewString(text) { //osszes szamra truet ir ki, ezert ki lehet irni a szamokat
+        for(char of text){
+            console.log(char+" "+!isNaN(parseInt(char)));
+        }
+    }
+
+    var response = getNewString(stringTemp);
+    console.log(response);
+
+
+
+
+
+
+
+</script>
+
+
+</body>
+</html>

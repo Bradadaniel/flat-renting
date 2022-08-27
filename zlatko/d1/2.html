@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 2</title>
+</head>
+
+<body>
+
+<script>
+    var s = true;
+    let z = 1;
+    if (s) {
+        var x = 5;
+    }
+    console.log(x);  // x is 5
+    console.log(window.x);
+    if (s) {
+        let y = 5;
+        console.log(z, y);
+    }
+    console.log(z);
+    //ReferenceError: y is not defined
+    console.log(window.z); // undefined //nem lassa mert globalis
+
+
+
+</script>
+
+</body>
+
+</html>

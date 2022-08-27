@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer 2</title>
+    <script>
+        window.addEventListener('load', init);
+        var myTimeOut;
+
+        function init() {
+
+            document.getElementById('start').addEventListener('click', function () { //elinditja de ck egyszer fut le.
+                myTimeOut = setTimeout(function () {
+                    alert("Hello World");
+                }, 1500);
+            });
+
+            document.getElementById('stop').addEventListener('click', function () {
+                clearTimeout(myTimeOut);
+            });
+        }
+
+    </script>
+</head>
+<body>
+
+<p><input type="button" value="start timeout" id="start"></p>
+<p><input type="button" value="stop timeout" id="stop"></p>
+</body>
+</html>

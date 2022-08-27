@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event 8</title>
+    <style>
+        td {
+            border: 1px solid #000;
+            background-color: #e5e5e5;
+            padding: 10px;
+            cursor: pointer
+        }
+
+        td:hover {
+            background-color: #c5c5c5;
+        }
+    </style>
+    <script>
+
+        window.addEventListener('load', init);
+
+        function init() {
+            let table = document.querySelector('#cell');
+            table.addEventListener('click', function (event) { //egerre hivatkozni(event vagy e)
+                //console.log(event.target);
+                let text = 'click was on ' + event.target.innerHTML
+                // event.target - the deepest element that originated the event.
+
+                //let text = 'click was on ' + event.target.innerHTML+event.currentTarget;
+                // event.currentTarget - the current element that handles the event (the one that has the handler on it)
+                // event.currentTarget = this
+
+                //let text = 'click was on ' + event.target.innerHTML+this;
+
+                // let text = 'click was on ' + event.target.innerHTML+event.eventPhase;
+                // the current phase (capturing=1, target=2, bubbling=3).
+                document.getElementById('text').innerHTML = text;
+            });
+        }
+    </script>
+</head>
+<body>
+
+<table id="cell">
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+    </tr>
+</table>
+<div id="text"></div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6 - numbers to string</title>
+
+    <script>
+
+        var students = 20;
+        var myStr = students + " students are done with the exam!";
+        alert(myStr);
+        console.log(typeof(students));
+
+        var studentsStr1 = students + "";
+        console.log(typeof(studentsStr1));
+
+        var myNum = 2;
+        var myNum1 = myNum + "2";
+        alert(myNum1);
+        console.log(typeof(myNum1)); //string
+
+        var studentsStr2 = String(students);
+        console.log(typeof(studentsStr2));
+
+        //binary
+        var studentsStr3 = students.toString(2);
+        console.log(studentsStr3);
+
+        //octal
+        var studentsStr4 = students.toString(8);
+        console.log(studentsStr4);
+
+        //hexa
+        var studentsStr5 = students.toString(16);
+        console.log(studentsStr5);
+
+        var n = 123456.789;
+        document.write(n.toFixed(0)+"<br>");
+        document.write(n.toFixed(2)+"<br>");
+        document.write(n.toExponential(1)+"<br>");
+        document.write(n.toExponential(3)+"<br>");
+        document.write(n.toPrecision(4)+"<br>");
+        document.write(n.toPrecision(7)+"<br>");
+
+    </script>
+</head>
+<body>
+</body>
+</html>

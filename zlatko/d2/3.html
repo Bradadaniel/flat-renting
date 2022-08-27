@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 3</title>
+</head>
+
+<body>
+<script>
+    function mapIt(f, a) {
+        let result = [];
+        let i;
+        for (i = 0; i !== a.length; i++) { //amig nem egyenli az a- hosszaval
+            result[i] = f(a[i]); // result[4] = 100;
+        }
+        return result;
+    }
+
+    let f = function (x) {
+        return x * x * x; //kobre emeli
+    };
+
+    let f2 = function (x) {
+        return x * x; //negyzetre emeli
+    };
+    let numbers = [0, 1, 2, 5, 10]; //kobre emeli a szamokat
+    let cube = mapIt(f, numbers); //kiir egy tombot -kobre emlet tombot ir ki
+    console.log(cube);
+
+</script>
+
+</body>
+
+</html>

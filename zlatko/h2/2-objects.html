@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Javascript - objects</title>
+    <script>
+        var point = {x: 10, y: 11};
+
+        document.write(point + "<br>");
+
+        alert(point.x);
+        alert(point.y);
+
+        console.log(point);
+
+        var image = {width: 220,
+            height: 320,
+            size: 1024,
+            totalPx: function()
+            {
+                return this.width * this.height
+            }
+        };
+        console.log(image.width, image.height, image.size, image.totalPx());
+
+        document.write(image.width + " " + image.height + " " + image.size + " " + image.totalPx());
+
+
+        var citizen1={
+            firstname : "Mark",
+            lastname : "Grey",
+            id : 39014
+        };
+
+        document.write("the value of citizen1: <i>" + citizen1 + "</i>; the type of citizen1: <i>" + typeof citizen1 + "</i><br>");
+
+        document.write("the value of citizen1.lastname: <i>" + citizen1.lastname + "</i>; the type of citizen1.lastname: <i>" + typeof citizen1.lastname + "</i><br>");
+
+        document.write("the value of citizen1['lastname']: <i>" + citizen1['lastname'] + "</i>; the type of citizen1['lastname']: <i>" + typeof citizen1['lastname'] + "</i><br><br>");
+    </script>
+</head>
+<body>
+
+
+
+</body>
+</html>

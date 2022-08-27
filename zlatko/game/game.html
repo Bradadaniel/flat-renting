@@ -1,0 +1,193 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Monster game</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <style>
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #e5e5e5;
+            font-family: 'Roboto', sans-serif;
+            font-size: 12pt;
+            color: #000;
+        }
+
+        #wrapper {
+            margin: 0 auto;
+            width: 940px;
+        }
+
+        #background {
+            width: 600px;
+            height: 600px;
+            background: #e5e5e5 url("bg.jpg") no-repeat;
+            border: 1px solid #000;
+            float: left;
+        }
+
+        #info {
+            padding: 10px;
+            float: left;
+            width: 300px;
+        }
+
+        #info h1 {
+            color: #0a0;
+        }
+
+        #countdown {
+            font-weight: bold;
+            color: #f00;
+            display: none;
+        }
+
+        #message {
+            display: none;
+        }
+
+        #hits {
+            font-weight: bold;
+            font-size: 16pt;
+            color: #00f;
+            display: none;
+        }
+
+        #footer {
+            padding: 10px;
+            clear: both;
+        }
+
+        #picture {
+            display: none;
+            cursor: pointer
+        }
+
+        #more {
+            display: none;
+        }
+
+    </style>
+
+
+    <script>
+
+        'use strict';
+
+        let hits = 0;
+        let seconds = 10; // game duration
+
+        let $ = function (id) {
+            return document.getElementById(id);
+        };
+
+        window.addEventListener('load', function () {
+            document.getElementById('sb').addEventListener('click', startGame, false);
+            document.getElementById('b').addEventListener('click', more, false); //ctrl more!
+        });
+
+        function clickMonster() { //kiirja a talalatok szamat
+            hits++;
+            $('total').innerHTML = hits;
+            randPosition(hits);
+        }
+
+        function randPosition() {
+            console.log(Math.random());
+            $('picture').src = "monanim.gif";
+            $('total').innerHTML = hits;
+            let elementStyle = $('picture').style;
+            let no1 = Math.floor((Math.random() * 500) + 1);
+            let no2 = Math.floor((Math.random() * 482) + 1);
+            elementStyle.position = "relative";
+            elementStyle.left = no1 + "px";
+            elementStyle.top = no2 + "px";
+            $('message').innerHTML = "position (left top): " + no1 + "px " + no2 + "px";
+        }
+
+        function secondPassed(countdownTimer) {
+
+            let minutes = Math.round((seconds - 30) / 60);
+            let remainingSeconds = seconds % 60;
+            if (remainingSeconds < 10) {
+                remainingSeconds = "0" + remainingSeconds;
+            }
+
+            document.getElementById('countdown').innerHTML = "time remains: " + minutes + ":" + remainingSeconds;
+
+            if (seconds === 0) {
+                clearInterval(countdownTimer);
+                document.getElementById('countdown').innerHTML = "The End";
+                $('picture').src = "theend.png";
+                $('picture').removeEventListener('click', clickMonster);
+                $('picture').removeEventListener('mouseover', randPosition);
+                $('picture').style.cursor = "default";
+                $('picture').style.display = "inline";
+                $('sb').style.display = "inline";
+                $('b').style.display = "inline";
+                seconds = 10;
+                hits = 0;
+            } else {
+                seconds--;
+            }
+
+
+        }
+
+        function more() {
+            if ($('more').style.display !== 'block') {
+                $('more').style.display = 'block';
+                $('b').value = "less info";
+            } else {
+                $('more').style.display = 'none';
+                $('b').value = "more info";
+            }
+        }
+
+        function startGame() {
+            $('sb').style.display = "none";
+            $('b').style.display = "none";
+            $('more').style.display = 'none';
+            $('picture').style.display = "inline";
+            $('picture').style.cursor = "pointer";
+            $('picture').addEventListener('click', clickMonster, false);
+            $('picture').addEventListener('mouseover', randPosition, false);
+            $('message').style.display = "block";
+            $('hits').style.display = "block";
+            $('countdown').style.display = "block";
+
+            let countdownTimer = setInterval(function () {
+
+                secondPassed(countdownTimer);
+
+            }, 1000);
+
+            randPosition();
+        }
+
+    </script>
+</head>
+<body>
+<div id="wrapper">
+    <div id="background">
+        <img id="picture" alt="ïmage" src="monanim.gif">
+    </div>
+    <div id="info">
+        <h1>Catch the Monster</h1>
+        <p id="message"></p>
+        <p id="countdown">time remains: </p>
+        <p id="hits">hits: <span id="total"></span></p>
+
+        <p><input id="b" type="button" value="more info"></p>
+        <p id="more">
+            In this game you have to catch our little monster. Remaining time is displayed above. Good luck and be FAST!
+        </p>
+
+    </div>
+    <div id="footer"><input type="button" value="START GAME" id="sb"></div>
+</div>
+</body>
+</html>

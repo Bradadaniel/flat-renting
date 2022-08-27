@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event 5</title>
+    <script src="check.js"></script>
+</head>
+<body>
+
+<form action="data.php" id="frm1">
+    <dl>
+        <dt><label for="title">Title:</label></dt>
+        <dd>
+            <select name="title" id="title">
+                <option value="-1">select...</option>
+                <option value="php">PHP for all</option>
+                <option value="javascript">JavaScript for all</option>
+                <option value="ajax">AJAX for all</option>
+            </select>
+            <span class="error" id="errTitle"> </span>
+        </dd>
+        <dt><label for="name">Name:</label></dt>
+        <dd>
+            <input type="text" name="name" id="name" size="30" value="">
+            <span class="error" id="errName"> </span>
+        </dd>
+        <dt><label for="email">E-mail:</label></dt>
+        <dd>
+            <input type="text" name="email" id="email" size="30" value="">
+            <span class="error" id="errEmail"> </span>
+        </dd>
+        <dd class="buttons">
+            <input type="submit" id="btnOk" name="btnOk" value="send">
+            <input type="submit" id="btnBack" name="btnBack" value="cancel">
+        </dd>
+    </dl>
+</form>
+</body>
+</html>

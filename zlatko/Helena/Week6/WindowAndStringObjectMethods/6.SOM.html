@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>2</title>
+</head>
+<body>
+
+<p id="p"></p>
+<p id="p1"></p>
+<p id="p2"></p>
+<p id="p3"></p>
+<p id="p4"></p>
+<p id="p5"></p>
+<p id="p6"></p>
+<p id="p7">Hello World</p>
+<button onclick="myFunction3()">Button</button>
+
+    <script>
+
+        //charAt()
+        var str = "Hello World";
+        document.getElementById("p").innerHTML = str.charAt(6);
+
+        //concat()
+        var text1 = "Hello";
+        var text2 = "world";
+        var text3 = text1.concat(" ",text2);
+        document.getElementById("p1").innerHTML = text3;
+
+        //indexOf(), lastIndexOf()
+        var str1 = "Hello world Hello world";
+        var pos = str1.lastIndexOf("world");
+        document.getElementById("p2").innerHTML = pos;
+
+        //slice()
+        var str2 = "Hello world Hello world";
+        var res = str2.slice(7,13);
+        document.getElementById("p3").innerHTML = res;
+
+        //split()
+        function myFunction() {
+            var str3 = "a,b,c,x,z,t,s";
+            var arr = str3.split(",");
+            document.getElementById("p4").innerHTML = arr[2];
+        }
+        myFunction();
+
+        //substr() substring()
+        var str4 = "Hello world Hello world";
+        var res2 = str4.substr(7,12);
+        var res3 = str4.substring(6,8);
+        document.getElementById("p5").innerHTML = res2;
+        document.getElementById("p6").innerHTML = res3;
+
+        //toLowerCase(), toUpperCase()
+        function myFunction3() {
+            var text = document.getElementById("p7").innerHTML;
+            document.getElementById("p7").innerHTML = text.toLowerCase();
+        }
+        //myFunction3();
+
+        //trim()
+        function myFunction4() {
+            var str = "        Hello         world       ";
+            alert(str.trim());
+        }
+      myFunction4();
+
+    </script>
+</body>
+</html>

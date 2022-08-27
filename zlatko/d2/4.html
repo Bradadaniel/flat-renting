@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 4</title>
+</head>
+
+<body>
+<script>
+    function add(x,y) { return x+y;}
+    function subtract(x,y) { return x-y;}
+    function multiply(x,y) { return x*y;}
+    function divide(x,y) { return x/y;}
+
+    function operate(operator, operand1, operand2) //fogad egy fugveny argumentumot(Add pl) meg ketto erteket hozza
+    {
+
+        return operator(operand1,operand2);
+    }
+
+    // (2+3) + (4*5)=25
+    let i = operate(add, operate(add,2,3), operate(multiply,4,5));//elobb osszadja 5 utana szorozza 20 es vegul az egeszet osszeadja 25
+
+    document.write("i="+i+"<br>");
+
+
+
+</script>
+
+</body>
+
+</html>

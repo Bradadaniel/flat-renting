@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5 - objects</title>
+
+    <script>
+
+// NUMBERS
+// https://www.w3schools.com/jsref/jsref_obj_number.asp
+
+        var number = 2;
+        console.log(typeof number);
+
+        var number2 = number.toString();
+        console.log(typeof number2);
+
+        console.log(number.toString());
+
+/////////////////////////////////////////////////////////////////
+
+// STRINGS
+// https://www.w3schools.com/jsref/jsref_obj_string.asp
+
+        var myText = "this is my text";
+
+        //length is a property NOT A METHOD!!!
+        console.log(myText.length);
+
+        //METHOD
+        console.log(myText.repeat(10));
+        //METHOD
+        console.log(myText.slice(0, 4));
+
+//////////////////////////////////////////////////////////////////
+
+// BOOLEAN
+// https://www.w3schools.com/jsref/jsref_obj_boolean.asp
+        var myBoolean = true;
+
+        console.log(myBoolean.toString());
+        console.log(myBoolean);
+
+//////////////////////////////////////////////////////////////////
+
+// ARRAY
+// https://www.w3schools.com/jsref/jsref_obj_array.asp
+
+    var myArray = new Array(10);
+    myArray.fill(11);
+    console.log(myArray);
+
+//////////////////////////////////////////////////////////////////
+
+// FUNCTIONS
+// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function
+var mySuperFunction = function() {
+    return "I'm super!!";
+}
+
+console.log(typeof mySuperFunction);
+
+// Property
+console.log(mySuperFunction.name);
+// Method
+console.log(mySuperFunction.toString())
+
+    </script>
+
+</head>
+<body>
+
+</body>
+</html>

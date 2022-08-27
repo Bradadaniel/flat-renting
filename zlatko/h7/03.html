@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript - 3</title>
+</head>
+<body>
+
+<form id="frm1" action="form_action.php">
+    <fieldset >
+        First name: <input type="text" name="fname" value="Name"><br>
+        Last name: <input type="text" name="lname" value="Lastname"><br>
+        <input type="submit" value="Submit">
+    </fieldset>
+</form>
+
+<p>Click the "Try it" button to return the value of each element in the form.</p>
+
+<p id="value"></p>
+
+<button onclick="myFunction()">Try it</button>
+
+<script>
+    function myFunction() {
+        var x = document.getElementById("frm1");
+        var txt = "";
+
+        for (var i = 0; i < x.length; i++) { //vegigmegy a teljes elemen(fieldsetben) es minden elem erteket kiirja
+            txt = txt + x.elements[i].value + "<br>";
+        }
+
+        document.getElementById("value").innerHTML = txt;
+    }
+</script>
+
+</body>
+</html>

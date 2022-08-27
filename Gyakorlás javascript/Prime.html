@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        //csinaljunk egy fuggvenyt ami eldonti prim-e az adott szam
+        function prime() {
+            var x = prompt('Adj meg egy szamot!');
+            if (isFinite(x) && Math.floor(x) == x) {
+                if (eldont(x)) {
+                    alert('A szam prim!');
+                } else {
+                    alert('A szam nem prim!');
+                }
+            } else {
+                alert('Egesz szamot adj meg!')
+            }
+        }
+        function eldont(x){
+            var i = 2;
+            while(i<=Math.floor(Math.sqrt(x)) && x%i!=0){  //PRIM : egyel es onmagaval nincs mas osztoja
+                ++i;                                        //el kell menni a szam gyokeig,ha addig talal osztot nem prim, ha nem talal prim.
+            }
+            return i>Math.floor(Math.sqrt(x)); //rakerdez mi miatt lepett ki. i%1!==0 - ha tullepett nem talalt osztot a szam prim. ha i%1!==0 - talalt osztot a szam nem prim.
+        }
+
+
+
+    </script>
+</head>
+<body>
+
+<input type="button" value="Prim!" onclick="prime()" />
+
+</body>
+</html>

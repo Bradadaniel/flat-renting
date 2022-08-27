@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript - 8</title>
+</head>
+<script>
+ //EGY URLAP VALIDALASA
+
+    function validateForm() {
+        if (document.proba.uname.value.length < 4) { //ellenorzo elegendo karakter vitt-e be(legalabb negy) //proba nevu elmeben, amin belul az uname elemnek az ertekenek a hosszat
+            document.getElementById("un").innerHTML = "Min. 4 characters!";
+            document.proba.uname.style.borderColor = "red";
+            return false;
+        }
+        return true;
+    }
+</script>
+<style type="text/css">
+    div.err {
+        margin-left: 15px;
+        display: inline;
+    }
+</style>
+
+<body>
+
+<form name="proba" method="post" action="a.php" onsubmit="return validateForm();">
+<!--    //ha falset kap nem engedi elkuldeni ellenorzes nelkul onsubmit-->
+<!--    onsubmit - ellenorzes-->
+    <input type="text" name="uname">
+    <div id="un" class="err"></div>
+    <br>
+    <input type="submit" name="sb" value="Send">
+</form>
+
+</body>
+</html>

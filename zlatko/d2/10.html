@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 10</title>
+</head>
+
+<body>
+<script>
+    let hello = () => { //function nincs ott - ez is anonim fuggveny
+        return "Hello World!";
+    };
+
+    console.log(hello());
+
+    let hello2 = () => "Hello World 2!";
+    // This works only if the function has only
+    // one statement.
+    console.log(hello2());
+
+    let hello3 = (val) => "Hello " + val; //kiirja hello meg a vehen world 3!
+    console.log(hello3('World 3!'));
+
+    let hello4 = val => "Hello " + val; //lehet igyis kiirni
+    console.log(hello4('World 4!'));
+
+</script>
+
+</body>
+
+</html>

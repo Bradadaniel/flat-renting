@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+</head>
+<body>
+<script>
+    'use strict';
+
+    /*
+     throw exception
+     the exception can be a JavaScript String, a Number, a Boolean or an Object.
+     */
+    /*function myFunction(x) {
+        try {
+            if (x === "") throw "empty";
+            if (isNaN(x)) throw "not a number";
+            if (x > 10) throw "too high";
+            if (x < 5) throw "too low";
+        } catch (err) {
+            document.write("Error: " + err + ".");
+        }
+    }
+
+    var a = 4;
+
+    myFunction(a);
+*/
+
+    function myFunction(x) {
+        if (x === "") throw Error("empty");
+        if (isNaN(x)) throw Error("not a number");
+        if (x > 10) throw Error("too high");
+        if (x < 5) throw Error("too low");
+    }
+
+    var a = 4;
+
+    try {
+        myFunction(a)
+    } catch (error) {
+        document.write("Error: " + error.message + ".");
+    }
+
+
+</script>
+
+</body>
+</html>

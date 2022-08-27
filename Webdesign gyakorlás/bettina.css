@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap');
+body{
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+}
+*{
+    box-sizing: border-box;
+    background-size: cover;
+}
+.nav{
+    display: flex;
+    padding: 20px;
+    background: #fff;
+}
+.logo{
+    text-align: left;
+    justify-content: left;
+    font-size: 20px;
+    color: #000;
+}
+.elemek{
+    justify-content: space-between;
+    margin: 0 auto;
+}
+.elemek a{
+    justify-content: space-between;
+    padding: 10px 30px;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.5s;
+    border-radius: 2rem;
+    color: #000;
+
+}
+.elemek a:hover{
+    background-color: #ff4d89;
+    color: #fff;
+}
+
+.box{
+    margin: 20px;
+    height: 400px;
+    width: 300px;
+}
+
+.img1{
+    background: url("img/dress1.jpg") center center;
+    height: 100%;
+    background-size: cover;
+}.img2{
+    background: url("img/dress2.jpg");
+    height: 100%;
+    background-size: cover;
+}.img3{
+    background: url("img/dress3.jpg");
+    height: 100%;
+    background-size: cover;
+}.img4{
+    background: url("img/dress4.jpg");
+    height: 100%;
+    background-size: cover;
+}
+.content{
+    margin: 0;
+    padding: 5px;
+    background: #fff;
+    color: black;
+    box-shadow: 10px 10px 30px #ff4d89 inset;
+    opacity: 0.8;
+}
+.content a{
+    text-decoration: none;
+    padding: 10px;
+    background-color: #ff4d89;
+    border-radius: 2rem;
+    color: black;
+    transition: all 0.5s ease;
+    height: 100%;
+}
+.content a:hover{
+    background-color: #7d0000;
+    color: white;
+}
+.boxes{
+    display: flex;
+    height: 700px;
+    background-image: url("img/roses.jpg");
+    background-size: cover;
+
+}
+.footer{
+    display: flex;
+    padding: 30px 20px;
+    background-color: #ff4d89;
+}
+.cim{
+    justify-content: center;
+}
+.cim h2{
+    width: 300px;
+    padding: 5px;
+    border-radius: 2rem;
+    font-size: 25px;
+    color: black;
+    transition:all 0.5s ease;
+}
+.cim h2:hover{
+ background: #7d0000;
+    color: white;
+}
+.contacts{
+    justify-content: center;
+    width: 1000px;
+    text-align: center;
+    align-items: center;
+}
+.contacts a{
+    width: 155px;
+    padding: 5px 25px;
+    border-radius: 2rem;
+    font-size: 25px;
+    text-decoration: none;
+    color: black;
+    transition:all 0.5s ease;
+}
+.contacts a:hover{
+    background: #7d0000;
+    color: white;
+}

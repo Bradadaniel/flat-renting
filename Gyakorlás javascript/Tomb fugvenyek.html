@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+        var tomb = new Array('Alma', 'Barack', 'Citrom', 'Dinnye','Korte','Dinnye');
+
+        //hogyan tudunk hozzaadni elemet a tombhoz:
+        tomb.push('Malna');
+        document.write(tomb[5], '<br />');
+
+        //hogyan torolhetunk elemet:
+        tomb.pop('Malna');
+        document.write(tomb[5], '<br />'); //undefined mivel nincs mar itt
+
+        //elejehez csusztatunk elemet
+        //tomb.unshift('Ribizli');
+        //document.write(tomb[0], '<br />');
+
+        //elso elem torlese
+        tomb.shift();
+        document.write(tomb[0], '<br />');
+
+        //kereses
+        document.write(tomb.indexOf('Dinnye', '<br />'));
+
+        //lastindexoffal-utoolso dinnye
+        document.write(tomb.lastIndexOf('Dinnye', '<br />'));
+
+
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

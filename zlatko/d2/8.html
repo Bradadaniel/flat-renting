@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 8</title>
+</head>
+
+<body>
+<script>
+    let sum = function () { //anonim fuggveny mivel nincs neve
+        let sum = 0; //blokkon beluli valtozo csak a blokkon belul ervenyes
+        for (let i = 0, len = arguments.length; i < len; i++) { //i kissebb mint len
+
+            let number = parseInt(arguments[i]);// arguments tombol kiveszi az i-edik elemet
+
+            if (!isNaN(number)) { //ha nem szam mivel tagadja azt nezi szam-e
+                sum += number;
+            }
+        }
+        return sum;
+    };
+
+    function print(msg) {
+        document.write(msg, "<br>");
+    }
+
+    print(sum(1, 2)); //argumentumok erteket adja ossze
+    print(sum(1, 2, 3, 4, 5));
+    print(sum(1, 2, 3, 4, 5, 6));
+    print(sum(1, 2, 3, 4, 5, 6, "VTS")); //sztringet nem fogja hozza adni mivel nem szam
+
+</script>
+
+</body>
+
+</html>

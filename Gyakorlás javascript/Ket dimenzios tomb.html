@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <script type="text/javascript">
+
+      function osszege(tomb){
+          var ossz =0;
+          for(var i=0; i<tomb.length;++i){ //mindig annyi for ahany dimenzios a tomb
+              for (var j =0; j<tomb[i].length;++j){
+                  ossz+=tomb[i][j]; //i-edik sor, j-edik eleme
+              }
+          }
+          return ossz;
+      }
+      var tomb = new Array(
+        new Array(1, 2, 3 ,4 ,5),
+        new Array(1, 2, 3 ,4 ,5),
+        new Array(1, 2, 3 ,4 ,5),
+        new Array(1, 2, 3 ,4 ,5),
+        new Array(1, 2, 3 ,4 ,5)
+    );
+
+      document.write(osszege(tomb));
+
+
+  </script>
+</head>
+<body>
+
+</body>
+</html>

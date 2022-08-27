@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>jQuery</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        /*
+
+         https://api.jquery.com/jQuery.Ajax/
+
+         */
+        $(document).ready(function () {
+            $("#send").click(function () {
+
+                let name = $("#school");
+                let city = $("#city");
+                $.ajax({
+                    beforeSend: function () {
+                        let isValid = true;
+
+                        if (name.val().trim() === "") {
+                            isValid = false;
+                        }
+
+                        if (city.val().trim() === "") {
+                            isValid = false;
+                        }
+
+                        if (!isValid) {
+                            alert("Error, values must not be empty!");
+                        }
+
+                        return isValid;
+                    },
+                    type: "POST",
+                    url: 'getData5.php',
+                    cache: false,
+                    data: $("#form").serialize(),
+                    success: successFnc,
+                    error: errorFnc,
+                    dataType: 'html'//json
+                });
+
+                function successFnc(data, status, xhr) {
+                    console.log(data);
+                    $("#test").html(data);
+                    $("input[type='text']").val("");
+                }
+
+                function errorFnc(xhr, status, error) {
+                    console.log(error);
+                    $("#test").html(error);
+                }
+            });
+        });
+
+    </script>
+
+</head>
+<body>
+<h1>This is a heading</h1>
+<p id="test">This is a paragraph.</p>
+<form id="form">
+    <label for="school">School:</label>
+    <input type="text" name="school" id="school">
+    <label for="city">City:</label>
+    <input type="text" name="city" id="city">
+    <input type="button" id="send" value="send">
+</form>
+
+</body>
+</html>

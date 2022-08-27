@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 5</title>
+</head>
+
+<body>
+<script>
+    let name = "My Name";
+    let email = "my@gmail.com";
+    let course = "Web programming";
+
+    //let school = "VTS2";
+
+
+    function print(message) {
+        document.write(message);
+    }
+
+    function writeStudentData(name, email, course, school) {
+        print("name:" + name + "<br>");
+        print("email:" + email + "<br>");
+        print("course:" + course + "<br>");
+        print("school:" + school + "<br>");
+    }
+
+    writeStudentData(name, email, course, ); // meghivja 3 parameterre
+    //name: name, email: email, course: course, school: undefinied
+    //name: emial,
+    //writeStudentData(name, email, course, school);
+
+
+</script>
+
+</body>
+
+</html>

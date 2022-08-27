@@ -1,0 +1,203 @@
+*{
+    padding: 0;
+    margin: 0;
+    text-decoration: none;
+    list-style: none;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: montserrat;
+}
+
+nav{
+    background: #e05a00;
+    height: 80px;
+    width: 100%;
+    border-radius: 0 0 2rem 2rem;
+}
+label.logo{
+    color: white;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: white;
+    font-size: 17px;
+    padding: 7px 13px;
+    border-radius: 3px;
+    text-transform: uppercase;
+}
+a.active,a:hover{
+    background: #a34100;
+    transition: .5s;
+}
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+#check{
+    display: none;
+}
+@media(max-width: 952px){
+    label.logo{
+        font-size: 30px;
+        padding-left: 50px;
+    }
+    nav ul li a{
+        font-size: 16px;
+    }
+}
+@media(max-width: 858px){
+    .checkbtn{
+        display: block;
+    }
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 100vh;
+        background: #2c3e50;
+        top: 80px;
+        left: -100%;
+        text-align: center;
+        transition: all .5s;
+    }
+    nav ul li{
+        display: block;
+        margin: 50px;
+        line-height: 30px;
+    }
+    nav ul li a{
+        font-size: 20px;
+    }
+    a:hover,a.active{
+        background: none;
+        color: #e05a00;
+    }
+    #check:checked ~ ul{
+        left: 0;
+    }
+}
+.header {
+    background: radial-gradient(#fff, #ff523b);
+    border-radius: 0 0 5rem 5rem;
+}
+
+.about-section{
+    background: url("img/rolunkbg.jpg");
+    background-size: 55%;
+    background-color: #fdfdfd;
+    overflow: hidden;
+    padding: 100px 0;
+}
+.inner-container{
+    width: 55%;
+    float: right;
+    background-color: #fdfdfd;
+    padding: 150px;
+}
+.inner-container h1{
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-weight: 900;
+}
+.text{
+    font-size: 13px;
+    color: #545454;
+    line-height: 30px;
+    text-align: justify;
+    margin-bottom: 40px;
+}
+.skills{
+    display: flex;
+    justify-content: space-between;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.Footer-text{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 1rem;
+    color: #fff;
+    flex-wrap: wrap;
+    gap: 2rem 2rem;
+}
+#Footer-fluid{
+    /*margin-top: 2rem;*/
+    background-color: #000000;
+    /*border-radius: 4rem 4rem 0 0;*/
+}
+.footer-box{
+    display: flex;
+    flex-direction: column;
+    min-width: 210px;
+}
+.footer-box a{
+    text-decoration: none;
+    color: #fff;
+    padding: 0.5rem 0;
+    background: black;
+}
+.footer-box a:hover{
+    color: #ff523b;
+}
+.footer-icons {
+    margin-top: 0.5rem;
+}
+.footer-icons a{
+    padding: 0 0.5rem;
+    font-size: 1.2rem;
+}
+.copyright{
+    text-align: center;
+    padding: 1rem;
+    color: #fff;
+}
+@media only screen and (max-width: 1199px) {
+    .footer-box{
+        min-width: 190px;
+    }
+    .inner-container{
+        padding: 80px;
+    }
+}
+
+@media only screen and (max-width: 991px) {
+    .footer-box{
+        min-width: 210px;
+    }
+    .about-section{
+        background-size: 100%;
+        padding: 100px 40px;
+    }
+    .inner-container{
+        width: 100%;
+    }
+}
+@media only screen and (max-width: 600px) {
+    .about-section{
+padding: 0;
+    }
+    .inner-container{
+padding: 60px;
+    }
+}
+
+

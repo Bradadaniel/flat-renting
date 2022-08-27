@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+</head>
+<body>
+<script type="text/javascript">
+
+    var end = function() {
+        document.write('Ok, that is correct!');
+    };
+
+    var speak = function (quote, callback) {
+        document.write(quote);
+
+        callback();
+
+        /*if (callback && typeof(callback) === "function"){
+         callback();
+         }*/
+    };
+
+    speak('JavaScript is easy to learn. ', end);
+    speak('JS without callback');
+
+</script>
+
+</body>
+</html>

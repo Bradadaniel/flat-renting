@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 4</title>
+    <script>
+        function myFunction() {
+            document.getElementById("my-link").onclick = goToVts;
+            /*document.getElementById("my-link").onclick = function () {  //anonim fuggvennyel
+                alert("Welcome to VTS2");
+                return false;
+            }*/
+        }
+
+
+
+        //document.getElementById("my-link").onclick  = null;
+
+        function goToVts() {
+            alert("Welcome to VTS");
+            return false;
+        }
+    </script>
+
+
+</head>
+<body onload="myFunction()">
+
+<a id="my-link" href="http://www.vts.su.ac.rs/">My link</a>
+
+</body>
+
+
+</html>

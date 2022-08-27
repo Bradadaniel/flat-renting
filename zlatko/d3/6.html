@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event 1</title>
+    <script>
+
+        /*
+
+        element.addEventListener(event, function, useCapture)
+
+        useCapture = Optional. A Boolean value that specifies whether the event should be executed in the capturing or
+        in the bubbling phase.
+
+        Possible values:
+
+        true - The event handler is executed in the capturing phase
+        false- Default. The event handler is executed in the bubbling phase
+
+        */
+
+        window.addEventListener('load', init);
+
+        let $ = function (id) {
+            return document.getElementById(id);
+        };
+
+        function init() {
+            //document.getElementById('b1').addEventListener('click', makeIT);
+            $('b1').addEventListener('click', makeIT);
+            $('b1').addEventListener('click', makeIT3);
+            $('b1').addEventListener('dblclick', makeIT2);
+        }
+
+        function makeIT() {
+            $('message').style.color = '#0f0';
+        }
+
+        function makeIT3() {
+            $('message').style.color = '#ff0';
+        }
+
+        function makeIT2() {
+            $('message').style.color = '#f00';
+            $('b1').removeEventListener('click', makeIT3);
+        }
+
+    </script>
+</head>
+<body>
+
+<input id="b1" type="button" value="click me">
+<div id="message">Hello World!</div>
+
+
+</body>
+</html>

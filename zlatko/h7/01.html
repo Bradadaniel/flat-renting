@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript - 1</title>
+    <style type="text/css">
+        #message {
+            border:5px solid #00ff00;
+        }
+    </style>
+    <script>
+        function init()
+        {
+            var e = document.getElementById("message").style;
+            var a = e.borderWidth; //nincs ertek hozza rendelve, roviditett kiiras
+            alert(a);
+            e.display = "inline";
+            var b = e.borderColor = "#f00";
+            alert(b);
+            var c = e.borderStyle = "dotted";
+            alert(c);
+            var d = e.borderWidth = "1px";
+            alert(d);
+        }
+    </script>
+</head>
+<body onload="init();">
+<div id="message">Subotica Tech</div>
+</body>
+</html>

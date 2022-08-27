@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 1</title>
+</head>
+
+<body>
+<script>
+    var x = 1;
+    //console.log('x is '+message(x)); //nem lehet logolni mert kesobb van
+    var message = function calculate(x) { //messageval meghivom a functiont
+        while (x < 20) { //vegig megy 20x es kiirja a 20at
+            x += 1;
+            calculate(x);
+        }
+        return x;
+    };
+
+    console.log('x is ' + message(x));
+
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 9</title>
+</head>
+
+<body>
+
+<script>
+
+    var n = 50;
+    console.log(n);
+    var s = n + " programmers in company."; //50 programmers in company.
+
+    var n_s = n + ""; // "50" //sztring 50 lesz
+
+    var string_value1 = String(n); // function // sztringbe alakitsa az n-t
+
+    var string_value2 = n.toString(); // method
+
+    console.log(s);
+    console.log(n_s);
+    console.log(string_value1);
+    console.log(string_value2);
+
+
+    var n2 = 255;
+    var binary_string = n2.toString(2); // binarisba irja ki
+    var octal_string = "0" + n2.toString(8);  //octalisba
+    var hex_string = "0x" + n2.toString(16);  //hexaba
+
+    document.write(binary_string + "<br>");
+    document.write(octal_string + "<br>");
+    document.write(hex_string);
+
+
+</script>
+
+</body>
+
+</html>

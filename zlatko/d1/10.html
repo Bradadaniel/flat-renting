@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 10</title>
+</head>
+
+<body>
+
+<script>
+
+    /*
+
+JavaScript stores numbers as 64 bits floating point numbers,
+but all bitwise operations are performed on 32 bits binary numbers.
+
+Before a bitwise operation is performed, JavaScript converts numbers to 32 bits signed integers.
+
+After the bitwise operation is performed, the result is converted back to 64 bits JavaScript numbers.
+ */
+
+    var a = 5 & 1; // 0101 & 0001 	 0001 Bitwise AND
+    console.log(a);
+    //ha elso akkor 1 ha masodik akkor 0
+
+    var b = 5 | 1; // 0101 | 0001 	 0101 Bitwise OR
+    console.log(b);
+    //nagyobbat nezi
+
+    var c = ~5; // ~0101 	 1010 Bitwise NOT
+    console.log(c);
+    //~5 eredmeny -6
+    //~-4 eredmeny 3
+
+    var d = 5 << 1; // 0101 << 1 	 1010 (Zero Fill) Bitwise Left Shift
+    console.log(d);
+    // 5 << 1 = 10
+    // 5 << 2 = 20
+    // 5 << 3 = 40
+    // 5 << 4 = 80
+    //duplazo cucc
+
+    var e = 5 ^ 1; // 0101 ^ 0001 	 0100 Bitwise XOR
+    console.log(e); //ha paros hozzaadja ha paratlan kivonja
+
+
+    var f = 5 >> 1; // 0101 >> 1 	 0010 (Sign Preserving) Bitwise Right Shift
+    console.log(f);
+
+    var g = 5 >>> 1; // 0101 >>> 1 	 0010 (Zero Fill) Right Shift
+    console.log(g);
+
+    console.log("235"+" " + Number("250")) //atalakitana szamma csak megint stringhez adja hozza
+    /*
+
+      0 => 00000000000000000000000000000000
+      -1 => 11111111111111111111111111111111
+      2147483647 => 01111111111111111111111111111111
+      -2147483648 => 10000000000000000000000000000000
+
+
+    ~0 => -1
+    ~-1 => 0
+    ~2147483647 => -2147483648
+    ~-2147483648 => 2147483647
+
+     */
+
+    function isOdd (int) { //isOdd - paratlan szanot nezi
+        return (int & 1) === 1; //ha mindketto igaz akkor true megnezi 22 nagyobbm int egy de nem paratlan ezet false
+    }
+
+    function isEven (int) {   //paros szamot
+        return (int & 1) === 0;
+    }
+    //isOdd: Ha páratlan és nagyobb mint 1 akkor true vagy ha kisebb mint 1 és páratlan
+    //isEven: Ha páros és kisebb mint 1 akkor true vagy ha nagyobb mint 1 és páros
+    console.log(isOdd(22)); // false
+    console.log(isOdd(-53)); // true
+    console.log(isEven(-14)); // true
+    console.log(isEven(195)); // false
+
+
+</script>
+
+</body>
+
+</html>

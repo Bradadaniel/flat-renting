@@ -1,0 +1,142 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap');
+/*seelector*/
+/*    *-minden elemre */
+*{
+    box-sizing: border-box;
+}
+
+html{
+    /*height: 100%;*/
+}
+body {
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    /*background-color: #000;*/
+    /*background-color: rgba(0, 0, 0, 0.5);*/
+    background: url("img/pexels-elti-meshau-333850.jpg") top center;
+    /*background-repeat: repeat;*/
+/*    ismetli a hatteret*/
+/*    background-repeat: repeat-y;*/
+/*    csak y tengelyen jelenik meg*/
+/*    background-repeat: no-repeat;*/
+/*    egyetlen egy kep*/
+    background-size: cover;
+/*    kitolti teljesen*/
+/*    background-size: contain;*/
+/*    hatter mindig latszodni fog, ahogy tolom a kepet ugy valtozik a meret*/
+
+/*    POSITION*/
+/*    background-repeat: no-repeat;*/
+/*    background-position: top center;*/
+/*    top ertek felulre ragaszta a center pedig kozepre
+-ha pl center center full kozepre rakja*/
+
+
+    /*background-attachment: fixed;*/
+/*    gorgetes hatasara ott marad a hatter*/
+
+/*    FONTOK*/
+/*    color: white;*/
+/*    font-size: 1.2rem;*/
+    /*font-style: italic;*/
+    /*line-height: 10px;*/
+/*    sor magassag*/
+/*    font-family:  Arial, Helvetica , sans-serif;*/
+/*    font-weight: bold;*/
+/*    betu vastagsag  100-300-500*/
+}
+
+/*BOXOLAS*/
+.box {
+    box-shadow:inset 0 0 60px whitesmoke,
+    inset 20px 0 80px #0000fa,
+    inset -20px 0 80px #00fafa,
+    inset 20px 0 300px #0000fa,
+    inset -20px 0 300px #00fafa,
+    0 0 50px #fff;
+
+    background: #fff;
+    max-width: 600px;
+    width: 90%;
+    /*nem er hozza a szelehez mivel 90%*/
+    /*width: 400px;*/
+    /*padding: 20px;*/
+    /*box-sizing: content-box; -default ertek */
+    box-sizing: border-box;
+    /*    nem adodik hozza a padding hanem a belso ertekekbol vonja le*/
+    /*border-width: 10px;*/
+    /*border-style: solid;*/
+    /*border-color: #0000fa;*/
+    /*border: 10px solid #0000fa;*/
+    /*dotted- pottyos vonal*/
+    /*dashed - szagatott*/
+    /*border-left: 10px solid red;*/
+    /*    csak bal oldal*/
+
+    /*margin: 20px 10px;*/
+    margin: 40px auto;
+/*    mindig kozepre rakja */
+}
+.header-img{
+    background-size: cover;
+    background-image: url("img/car1.jpg");
+    height: 200px;
+}
+.box-content{
+    padding: 20px;
+}
+.box h2{
+    margin: 0;
+}
+.box .box-content .details{
+    margin-bottom: 0;
+}
+.box .box-content .details a{
+    background: #7d0000;
+    color: white;
+    padding: 5px 10px;
+    display: block;
+    display: inline-block;
+    text-decoration: none;
+}
+.box-2{
+    box-sizing: border-box;
+    background: #fff;
+    max-width: 600px;
+    width: 90%;
+    margin: 40px auto;
+    box-shadow: 0 0 30px #fff;
+/*   felso also, blur-elmosas, szin */
+}
+.box-2 .header-img{
+    background: url("img/car2.jpg");
+    background-size: cover;
+    height: 200px;
+}
+.box-2 .box-content{
+    padding: 20px;
+}
+.box-2 .box-content p{
+    color: #4d4d4d;
+}
+.box-2 .box-content h2{
+    margin: 0;
+    color: #1f3c52;
+}
+/*inline- sorba rakja*/
+/*block egymas ala igaztija*/
+/*inline-block - az a kulombseg itt lehet bealitani padding.margin.stb-t*/
+.box-2 .box-content .details{
+margin-bottom: 0;
+/*    lenti margo levetel //  margin: 16px 0 0 0*/
+
+}
+.box-2 .box-content .details a{
+    background: #0000bf;
+    color: white;
+    padding: 5px 10px;
+    display: inline-block;
+    text-decoration: none;
+/*    alahuzas eltuntetes*/
+}
+/*2.23.59*/

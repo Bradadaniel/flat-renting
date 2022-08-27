@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+    <script>
+
+        var $ = function (id) {
+            return document.getElementById(id);
+        };
+
+        function init() {
+            $('hw1').innerHTML = "Hello";
+            //document.getElementById('hw1').innerHTML = "Hello";
+            $('hw2').innerHTML = "World";
+            $('hw3').innerHTML = "!";
+            $('b').onclick = change;
+            $('b').ondblclick = init;
+        }
+
+        function change() {
+            $('hw1').innerHTML = "Ciao";
+            $('hw2').innerHTML = "Subotica";
+            $('hw3').innerHTML = "Tech";
+        }
+
+    </script>
+</head>
+<body onload="init()">
+<p id="hw1"></p>
+<p id="hw2"></p>
+<p id="hw3"></p>
+<input type="button" id="b" value="change it">
+</body>
+</html>

@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap');
+*{
+    box-sizing: border-box;
+}
+body{
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+    background: url("img/bg.jpg") no-repeat;
+    background-size: cover;
+}
+.container{
+    max-width: 800px;
+    margin: 40px auto;
+    box-shadow: 0 0 200px rgba(255,255,255,.5);
+}
+header{
+    /*position: relative;!*az absolut ertek a legkozelebbi relativehoz fog tapadni *!*/
+    background: url("img/bg1.jpg") no-repeat;
+    height: 360px;
+}
+nav{
+    background: rgba(190,0,0,.8);
+    /*position: fixed; !*felul marad a navbar csak nem veszi figyelmebe az oldal tobbi resze*!*/
+    position: sticky; /*  -   felul marad a navbar*/
+    /*position: absolute; !* Azt akarjuk hogy a bg1 aljara keruljon a felsorolas*!*/
+    left: 0;
+    right: 0;
+    top: 0;
+/*   left-right 0val teljes szelesseget erhetunk el */
+}
+nav a{
+    color: #fff;
+    text-decoration: none;
+    padding: 20px;
+    display: block;
+}
+nav a:hover{
+    background: rgba(0,0,0,.8);
+}
+nav ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+nav>ul>li{
+    /*csak a kozvetlen leszarmazottjaira fog vonatkozni ez a szabaly*/
+    float: left;
+}
+nav::after{
+    content: "";
+    clear: both;
+    display: table;
+}
+nav .submenu{
+/*    almenu ranyiljon a tartalomra*/
+    position: absolute;
+    width: 220px;
+    display: none; /* eltunik az almenu*/
+}
+nav .has-submenu{
+    position: relative;
+}
+nav .has-submenu*a{
+    padding-right: 35px ;
+}
+nav .has-submenu::after{
+    content: "▾";
+    color: #fff;
+    position: absolute;
+/*    kis jel beillesztese az almenuhoz*/
+    top: 20px;
+    right: 10px;
+}
+nav .has-submenu:hover .submenu{
+    display: block;
+/*    ha rajta az eger megjelenik az almenu*/
+}
+nav .submenu a{
+    background: rgba(190,0,0,1);
+    padding: 10px 20px;
+}
+nav .submenu a:hover{
+    background: #000;
+}
+
+main{
+    background: #fff;
+    padding: 40px;
+}
+main p{
+    line-height: 1.5;
+}
+main h1{
+    margin-top: 0;
+}
+.cookie-accept{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.9);
+    color: #fff;
+    padding: 20px;
+    text-align: center;
+}
+.cookie-accept button{
+    background: yellow;
+    border: 0;
+    margin-left: 10px;
+    padding: 5px 10px;
+    border-radius: 1rem;
+    color: #000;
+    cursor: pointer;
+
+}
+.cookie-accept button:hover{
+    background: #7d0000;
+    color: #fff;
+}

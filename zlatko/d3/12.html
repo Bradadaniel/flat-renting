@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event 7</title>
+    <script>
+        /*
+         At any time during bubbling you can know which top element
+         was clicked (even if it doesn't handle the event):
+      */
+        window.addEventListener('load', init);
+
+        function init() {
+
+            document.querySelector('body').addEventListener('click', function (e) {
+                alert(e.target + ' clicked');
+                console.log(e.target);
+                alert(e.target.tagName + ' clicked');
+
+            });
+
+        }
+    </script>
+</head>
+<body>
+
+<div>
+    <img src="https://www.vts.su.ac.rs/data/slides/2018/22_slajd-2-16.jpg" alt="logo">
+    <p>VTS</p>
+</div>
+
+</body>
+</html>

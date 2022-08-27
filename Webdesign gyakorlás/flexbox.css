@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap');
+body{
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    background: url("img/bg3.jpg") #fff;
+}
+img {
+    max-width: 100%;
+}
+*{
+    box-sizing: border-box;
+}
+
+h1{
+    text-align: center;
+    font-size: 70px;
+    border-top: 2px dashed rgba(0,0,0,.2);
+    border-bottom: 2px dashed rgba(0,0,0,.2);
+    padding: 20px 0;
+    margin: 40px 0;
+    background: rgba(255,255,255,.8);
+    color: #76b332;
+}
+.container{
+    width: 1200px;
+    margin: 0 auto;
+/*    flex-direction : meghatarozza egymas mellett vagy alatt legyenek az elmeke*/
+    flex-direction: row;
+    /*flex-direction: row-reverse;*/
+/*    jobrol balra*/
+/*    flex-direction: column-reverse;- fentrol lefele jeleniti meg*/
+/*    flex-wrap: wrap;*/
+/*    megtori a sorokat*/
+    flex-wrap: nowrap;
+/*    nem tudnak az elemek megtorni  - ha siman wrap*/
+/*Ha egyben akarjuk kiirni a directiont es a wrapot akkor:
+flex-flow: row wrap*/
+
+}
+.content{
+    display: flex;
+    /*align-items: flex-start; -felulre csusznak az elemek*/
+    /*align-items: flex-end; - az aljara csuszik*/
+    /*align-items: center - fuggoleges igazitas(full kozep);*/
+    /*    strach - alap beallitas mikor minden elemet kihuz teljes magassagba*/
+
+}
+nav{
+    background: url("img/bg.jpg");
+    flex-basis: 20vw;
+/*    aktualis viewport szellesegenek 20%-a*/
+    order: 3;
+}
+nav ul{
+    margin: 0;
+    list-style: none;
+    padding: 30px 10px;
+}
+nav li{
+    border-bottom: 1px dashed rgba(255,255,255,.3);
+}
+nav a{
+    text-decoration: none;
+    color: #fff;
+    padding: 15px;
+    display: block;
+}
+nav a:hover{
+    background: rgba(255,255,255,0.2);
+}
+main{
+    flex-basis: 60vw;
+    margin: 0 20px;
+    order: 2;
+}
+aside{
+    flex-basis: 20vw;
+/*    ORDER - felcsereles*/
+    order: 1;
+}
+aside ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+aside a{
+    display: block;
+    color: #3b4052;
+    font-size: 14px;
+    text-decoration: none;
+    line-height: 20px;
+}
+aside li{
+    padding: 15px 0;
+    border-bottom: 1px dashed rgba(0,0,0,.4);
+}
+aside a:hover{
+    text-decoration: underline;
+}
+.cars{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -10px;
+}
+.cars-box{
+    flex: 1;
+    /*automatikus megadas*/
+    min-width: 250px;
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 0 0 10px 0;
+    margin: 0 10px 20px 10px;
+}
+.cars-box h2{
+    font-size: 18px;
+    padding: 10px 20px 0 20px;
+    margin: 0;
+}
+.cars-box p{
+    margin: 0;
+    padding: 10px 20px;
+    font-size: 14px;
+    line-height: 19px;
+}
+.pagination{
+    display: flex;
+    flex-flow: row wrap;
+    margin: 30px 0;
+    justify-content: center;
+}
+.pagination .page{
+    display: inline-block;
+    padding: 5px 8px;
+    text-decoration: none;
+    background: #fff;
+    border: 1px solid rgba(0,0,0,.2);
+    color: #354052;
+    margin: 0 5px 5px 0;
+}
+.pagination .page:hover,
+span .page{
+    background: #000;
+    color: white;
+}

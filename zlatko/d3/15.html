@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Timer 1</title>
+
+    <script>
+
+        // window.addEventListener('load', init);
+        // var myInterval;
+        //
+        //
+        // function init() {
+        //     myInterval = setInterval(function () {
+        //         alert("Hello World")
+        //     }, 3000);
+        //
+        //     document.getElementById('stop').addEventListener('click', function () {
+        //         clearInterval(myInterval);
+        //         console.log('interval stopped');
+        //     });
+        // }
+
+
+
+        // Time is in milliseconds.
+        // 1000 ms = 1 second.
+
+       let myInterval = setInterval(function () {
+            alertFunction("Vts", "Subotica");
+        }, 3000);
+
+        function alertFunction(school, city) {
+            document.querySelector('body').style.backgroundColor = "#f00";
+            alert("Hello " + school + ". You are located in " + city);
+            document.querySelector('body').style.backgroundColor = "#fff";
+        }
+
+
+
+
+
+    </script>
+</head>
+<body>
+
+<p>setInterval</p>
+<p><input type="button" value="stop interval" id="stop"></p>
+</body>
+</html>

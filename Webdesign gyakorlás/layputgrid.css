@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap');
+body{
+    font-family: 'Lato', sans-serif;
+    margin: 0;
+    background: url("img/bg3.jpg");
+}
+*{
+    box-sizing: border-box;
+}
+.container{
+    width: 1000px;
+    margin: 40px auto;
+    display: grid;
+    /*grid-template-columns: 1fr 1fr 1fr; !*3 egyseget hoztam letre*!*/
+/*    maga a hossza fr-ben merjuk , aranyosan ossza el*/
+    grid-template-columns: repeat(12, 1fr); /* 12oszlop 1fr merettel*/
+    grid-row-gap: 10px;
+/*    sorok kozott hely*/
+    grid-column-gap: 10px;
+/*    sorok kozott*/
+/*    shorthand megadas: grid-gap:10px*/
+}
+.col{
+    background: #fff;
+    padding: 10px;
+}
+
+.container .col2{
+    grid-column: span 2;
+}
+.container .col3{
+    grid-column: span 3;
+}
+.container .col4{
+    grid-column: span 4;
+}
+.container .col6{
+    /*    hany cellat fogjon at:*/
+    /*    grid-column-start: 1;*/
+    /*1-estol indulunk*/
+    /*grid-column-end: 7;*/
+    /*    hetedikig akarjuk*/
+    grid-column: span 6;
+}
+.container .col12{
+    grid-column: span 12;
+}
+.container2{
+    width: 1000px;
+    margin: 40px auto;
+    display: grid;
+    /*grid-template-columns: 1fr 1fr 1fr; !*3 egyseget hoztam letre*!*/
+    /*    maga a hossza fr-ben merjuk , aranyosan ossza el*/
+    grid-template-columns: repeat(4, 1fr); /* 12oszlop 1fr merettel*/
+    grid-row-gap: 10px;
+    /*    sorok kozott hely*/
+    grid-column-gap: 10px;
+    /*    sorok kozott*/
+    /*    shorthand megadas: grid-gap:10px*/
+    grid-template-areas:
+    "header header header header"
+    "main main . sidebar"
+    "footer footer footer footer"
+    ;
+}
+.container2 .header{
+    grid-area: header;
+}
+.container2 .main{
+    grid-area: main;
+}
+.container2 .sidebar{
+    grid-area: sidebar;
+}
+.container2 .footer{
+    grid-area: footer;
+}
+
+.container3{
+    width: 1000px;
+    margin: 40px auto;
+    display: grid;
+    /*grid-template-columns: 1fr 1fr 1fr; !*3 egyseget hoztam letre*!*/
+    /*    maga a hossza fr-ben merjuk , aranyosan ossza el*/
+    grid-template-columns: repeat(12, 1fr); /* 12oszlop 1fr merettel*/
+    grid-row-gap: 10px;
+    /*    sorok kozott hely*/
+    grid-column-gap: 10px;
+    /*    sorok kozott*/
+    /*    shorthand megadas: grid-gap:10px*/
+
+}
+.container3 .col1{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.container3 .col2{
+    grid-column-start: 3;
+    grid-column-end: 6;
+}
+.container3 .col3{
+/*    grid-column-start: 1;*/
+/*    grid-column-end: 3;*/
+/*    grid-row-start: 2;*/
+/*    !*melyik sorbol induljon*!*/
+/*    grid-row-end: 4;*/
+/*!*    melyik soig tartson*!*/
+    grid-area: 2 / 1 / 4 / 3; /*az elozo 4*/
+}

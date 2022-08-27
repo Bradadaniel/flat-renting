@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays 1</title>
+    <script>
+        var myArray1 = ['Marko', 'Mirela', 'Bojana', 'Mariana', 'Biljana'];
+        var myArray2 = ['PHP', 'mySql', 'JavaScript', 'Laravel', 'PHP', 'VueJs'];
+
+        var myNewArray = myArray2.slice(2,5);
+        console.log(myNewArray);
+
+        var myConcat = myArray1.concat(myArray2, myArray1);
+        console.log(myConcat);
+
+        var myIndexOf = myArray2.indexOf('Laravel');
+        console.log(myIndexOf);
+
+        var myLastIndexOf = myArray2.lastIndexOf('PHP');
+        console.log(myLastIndexOf);
+
+        var myJoin = myArray2.join(' and ');
+        console.log(myJoin);
+
+        var myPop = myArray2.pop(); //ELVESZI AZ UTOLSOT
+        console.log(myPop, myArray2);
+
+        var myShift = myArray2.shift();
+        console.log(myShift, myArray2);
+
+        myArray2.push('new element');
+        console.log(myArray2);
+
+        var myUnshifted = myArray2.unshift('this should be first');
+        console.log(myUnshifted, myArray2);
+
+        myArray2.sort(); //ABC
+        console.log(myArray2);
+
+        var myNumbers = [1, 10, 100, 22, 44];
+        myNumbers.sort(function(a,b){return a-b});
+        console.log(myNumbers);
+    </script>
+</head>
+<body>
+
+</body>
+</html>

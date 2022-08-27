@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+</head>
+<body>
+<p>Please input a number between 5 and 10:</p>
+<label for="demo">Number:</label>
+<input id="demo" type="text" name="number">
+<button type="button" id="button">Test Input</button>
+<p id="message"></p>
+
+<script>
+    'use strict';
+    window.addEventListener('load', function () {
+        document.getElementById('button').addEventListener('click', myFunction);
+    });
+
+    function myFunction() {
+        let y = document.getElementById("message");
+        let x = document.getElementById("demo").value;
+
+        y.innerHTML = "";
+        try {
+            checkData(x);
+        } catch (err) {
+            y.innerHTML = "Error: " + err + ".";
+        } finally {
+            y.style.color = "#00f";
+        }
+    }
+
+    function checkData(x) {
+        if (x === "") throw Error("empty");
+        if (isNaN(x)) throw Error("not a number");
+        if (x > 10) throw Error("too high");
+        if (x < 5) throw Error("too low");
+    }
+
+</script>
+
+</body>
+</html>

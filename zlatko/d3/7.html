@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event 2</title>
+    <style>
+
+        .second {
+            color: #00f;
+            font-size: 28pt;
+            font-family: Tahoma,sans-serif;
+            font-weight: bold;
+        }
+
+    </style>
+    <script>
+
+        window.addEventListener('load', init);
+        let mess = '';
+
+        let $ = function (id) {
+            return document.getElementById(id);
+        };
+
+        function init() {
+            $('a1').addEventListener('click', makeIT);
+            $('a1').addEventListener('click', makeIT2);
+            $('a1').addEventListener('click', makeIT3);
+        }
+
+        function makeIT() {
+            $('message').style.color = '#0f0';
+            mess = "Hello";
+        }
+
+        function makeIT2() {
+            $('message').style.color = '#f00';
+            $('message').style.fontSize = '14pt';
+            mess += " VTS";
+        }
+
+        function makeIT3(e) {
+            mess += "!!!";
+            $('message').className = "second";
+            $('message').innerHTML = mess;
+            this.removeEventListener('click',makeIT); //kitorli a zoldet
+            e.preventDefault();
+        }
+
+
+
+    </script>
+</head>
+<body>
+
+<a href="http://www.vts.su.ac.rs" id="a1">click me</a>
+<div id="message">Hello World!</div>
+
+</body>
+</html>

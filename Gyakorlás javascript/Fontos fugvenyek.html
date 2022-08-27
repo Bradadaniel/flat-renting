@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">-
+    <title>Title</title>
+    <script type="text/javascript">
+        //Globalis fuggvenyek
+        isFinite(x) // igaz, ha x szam tipus isFinite("negyven") ->false / isFinite(40) ->true
+        isNaN(x) // igaz, ha x nem szam tipus isNaN("negyven") ->true / isFinite(40) ->false
+        Number(x) //x valtozot szam tipussa alakitja(ha tudja) pl:document.write(Number("40.5 years"))  ->40.5
+        parseFloat(x) //x valtozot  valosszam tipussa alakitja(ha tudja) pl:document.write(parseFloat("40.5 years"))  ->40.5
+        parseInt(x) //x valtozot  egesz szam tipussa alakitja(ha tudja) pl:document.write(parseInt("40.5 years"))  ->40
+        String(x) //x valtozot sztringe alakitja string(40) -> "40"
+
+        //Math objektum fuggvenyei
+        acos(x) //ARCCOS erteke radianba
+        asin(x) //ARCSIN erteke radianba
+        atan(x) //ARCTAN erteke radianba -PI/2 es PI/2 radian kozott
+        ceil(x) // visszaadja x erteket, kerekitve a legkozelebbi egesz szamhoz
+        sin(x) //sin x erteke radianba
+        cos(x) //cos x erteke radianba
+        tan(x) //tan x erteke radianba
+        exp(x) //visszaadja ex erteket
+        floor(x) //egesz szamot ad vissza xb=-bol
+        log(x) //x tizes alapu logaritmusat kepzi
+        max(x,y,z...n) //A megadott parameterek kozul a legnagyobbat adja vissza
+        min(x,y,z...n) //A megadott parameterek kozul a legkissebbet adja vissza
+        pow(x, y) //Eredmenye x az y-adik hatvanyon
+        random(x) //0..1 intervallumban valos veletlenszeru szamot general
+        round(x) //visszaadja x erteket, kerekitve a legkozelebbi egesz szamhoz
+        sqrt(x) //negyzetgyoket adja vissza
+
+        //String objektum fuggvenyei
+        length //A string karaktereinek szamat adja vissza: s.length ->9
+        charAt(i) //A stringben i-edik pozicioban karaktert adja vissza. s.charAr(i) ->"m"
+        charCodeAt(i) //i-edik pozicioban levo karakter kodjat adja vissza: s.charCode(0) ->65
+        concat(s) //s stringhez fuz stringet: s.concat("kusz") -> "Almaskusz"
+        fromCharCode(i) // Ascii kod karakter erteket(ertekeit) adja vissza pl:string.from(72,69,76,76,79) ->"HELLO"
+        indexOf(s) //elso elofordulasa a stringben: s.indexOf("pite") ->5
+        lastIndexOf(s) // utolso elofordulasi helye a stringben
+        substr(i, j) //karakterlanc kivagasa i-poziciotol j-tavolsagig
+        valueOf(s) //A string eretket adja vissza(ket string osszehasonlitasanal fontos)
+        toLowerCase() //kisbetu
+        toUpperCase() //nagybetu
+
+        //Array objektum fuggvenyei
+        length //A tomb elemszamaval ter vissza tomb.length->4
+        concat() //ket vagy tobb tombot egyesit
+        indexOf()// A parameterkent kapott erteket keresi a tomben es indexet ad vissza. tomb.indexOf('Dinnye')
+        lastIndexOf() // A parameterkent kapott ertek utolso elofordulasi helye a tomben.
+        pop() //Eltavolitja a tomb utolso elemet. tomb.pop()
+        push() //Uj elemet fuz hozza a tomb vegere. tomb.push('Sajt')
+        shift() //eltavolitja a tomb elso elemet tomb.shift()
+        unshift() //uj elemet szur hozza a tomb elso poziciojaba
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4 - null</title>
+    <script>
+        var myNull = null;
+
+        // null is converted to false if used as bool
+        if(myNull) {
+            alert("it's TRUE!");
+        } else {
+            alert("it's FALSE!");
+        }
+
+        // null is converted to 0 if used as a number
+        var myNumber = myNull + 25;
+        alert(myNumber);
+
+        //null is converted to string null if used as string
+        alert(myNull); //stringbe null
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <!-- RANDOM SZAM-->
+    <script type="text/javascript">
+        var x = Math.random();
+        document.write(x);
+    </script>
+
+    <!-- 1 ES 100 KOZOTTI SZAMOK-->
+    <script type="text/javascript">
+        var x = Math.random()*100+1;
+        document.write(x);
+    </script>
+
+    <!-- -20 ES 80 KOZOTTI SZAMOK-->
+    <script type="text/javascript">
+        var x = Math.random()*80-19;
+        document.write(x);
+    </script>
+    -->
+    <!--EGESZ SZAMOKAT-->
+    <script type="text/javascript">
+        var x =Math.floor(Math.random()*100)+1;
+        document.write(x);
+    </script>
+
+    <!--SZAM TIPPELOS JATEK-->
+        <script type="text/javascript">
+        var x =Math.floor(Math.random()*100)+1;
+        document.write('Gondoltam egy szamra 1 es 100 kozott');
+        do{
+            var tipp = prompt('Add meg a tipped! <br />');
+        }while (tipp!=x)
+        </script>
+
+    <!-- SEGITSEG HOZZADASA -->
+    <script type="text/javascript">
+        var x =Math.floor(Math.random()*100)+1;
+        document.write('Gondoltam egy szamra 1 es 100 kozott <br />');
+        do{
+            var tipp = prompt('Add meg a tipped!');
+            if(tipp>x){  <!-- ha a tipped nagyobb mint az altalunk gondolt szam  kissebbet tippelj -->
+                document.write('Kissebbet tippelj! <br />');
+            }else if(tipp<x){ <!--ha a tipped kissebb mint az altalunk gondolt szam  nagyobbat tippelj-->
+                document.write('Nagyobbat tippelj; <br />');
+            }
+        }while (tipp!=x)
+        document.write('Gratulalok, a gondolt szam ',x,' volt');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

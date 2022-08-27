@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>function 2</title>
+</head>
+<body>
+<script>
+    var x = 1;
+    //console.log('x is ' + message(x));
+    var message = function calculate(x) {
+        while(x<20) {
+            x+=1;
+            calculate(x);
+        }
+        return x;
+    }
+    console.log('x is ' + message(x));
+</script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Let variable</title>
+    <script>
+        "use strict";
+        var s = true;
+        let z = 1;
+        if (s) {
+            var x = 5;
+        }
+        console.log(x); // x is 5
+        console.log(window.x);
+        if (s) {
+            let y = 5;
+        }
+        console.log(y); //ReferenceError: y is not defined
+        console.log(window.z); // undefined
+    </script>
+</head>
+<body>
+
+</body>
+</html>

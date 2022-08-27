@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>firsthomework</title>
+    <script>
+        window.addEventListener('load', init);
+        let $ = function (id) {
+            return document.getElementById(id);
+        };
+
+        function init() {
+            $('btn').addEventListener('click', checkNumbers);
+            $('btn').addEventListener('dblclick', clearField);
+        }
+        function checkNumbers(){
+
+            var text = document.getElementById('text').value;
+            var words = text.split('');
+
+            var res = 0;
+
+            for(let i = 0; i < words.length; i++)
+            {
+                var Word = parseInt(words[i]);
+                if(typeof(Word) == "number")
+                {
+                    if(Word % 2 == 0)
+                    {
+                        res += Word;
+                    }
+                }
+            }
+
+            alert("Páros számok összege: "+res);
+
+        }
+
+        function clearField(){
+
+            document.getElementById('text').value = "";
+        }
+
+
+
+    </script>
+</head>
+<body>
+<input type="text" id="text" id="text" minlength="1">
+<input type="submit" id="btn" value="Check" >
+</body>
+</html>

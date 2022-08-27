@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript - 7</title>
+    <script>
+        function myFunction(x) {
+            var x=document.getElementById("fname");
+            x.value = x.value.toUpperCase();
+            x.style.background = "white";
+        }
+
+        function turnToYellow(x) {
+            x.style.background = "yellow";
+        }
+    </script>
+</head>
+<body>
+<!--onchange - amikor elkattintunk az adott mezorol(megvaltoztattam)     -->
+<!--onfocus -   amikor rajta vagyok(belekattintottam)   -->
+Enter your name: <input type="text" id="fname" onchange="myFunction(this)" onfocus="turnToYellow(this)"/>
+<p>When the input field gets focus, a function is triggered which changes the background-color.</p>
+<p>When you leave the input field, a function is triggered which transforms the input text to upper case.</p>
+
+</body>
+</html>

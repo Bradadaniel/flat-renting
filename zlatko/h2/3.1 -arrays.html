@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Javascript - arrays</title>
+	<script>
+        var myArray = new Array(10);
+        myArray[0] = 16;
+        myArray[1] = 21;
+        myArray[6] = 78;
+        myArray[9] = 87;
+        for (i=0;i<myArray.length;i++)
+        {
+            document.write("the value of myArray["+i+"]: <i>" + myArray[i] + "</i>; the type of myArray["+i+"]: <i>" + typeof myArray[i] + "</i><br>");
+        }
+
+        document.write("<br>");
+
+        var myArray = new Array();
+        myArray[0] = 1.2;
+        myArray[1] = "some text";
+        myArray[2] = true;
+        myArray[3] = {x:1.1, y:3};
+
+        for (i=0;i<myArray.length;i++)
+        {
+            document.write("the value of myArray["+i+"]: <i>" + myArray[i] + "</i>; the type of myArray["+i+"]: <i>" + typeof myArray[i] + "</i><br>");
+        }
+
+        document.write("myArray[3].x = "+myArray[3].x+"<br>");
+        document.write("myArray[3].y = "+myArray[3].y+"<br>");
+
+        document.write("<br>");
+
+		var myArray1 = [1, 2, 3];
+		document.write(myArray1 + "<br>");
+
+</script>
+</head>
+<body>
+
+</body>
+</html>

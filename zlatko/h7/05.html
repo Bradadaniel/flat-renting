@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript - 5</title>
+    <style type="text/css">
+        .divstyle {
+            background-color: #D94A38;
+            width: 170px;
+            height: 80px;
+            margin: 20px;
+            padding-top: 20px;
+            color: #ffffff;
+            font-weight: bold;
+            font-size: 18px;
+            float: left;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<div class="divstyle"
+     onmouseover="this.innerHTML='Thank You'"
+     onmouseout="this.innerHTML='Mouse Over Me'">Mouse Over Me
+</div>
+
+<div class="divstyle" onclick="clickMeEvent(this)">Click Me</div>
+
+<script>
+    function clickMeEvent(obj) { //maga a div az obj
+        console.log(obj);
+        if (obj.innerHTML == "Goodbye") { //az adott objektumba milyen tartalom van jelenleg kiirva
+            obj.style.display = "none";
+        }
+        else if (obj.innerHTML == "Thank You") {
+            obj.innerHTML = "Goodbye";
+        }
+        else if (obj.innerHTML == "Click Me<br>Click Me Again<br>And Again") {
+            obj.innerHTML = "Thank You";
+        }
+        else if (obj.innerHTML == "Click Me<br>Click Me Again") {
+            obj.innerHTML = obj.innerHTML + "<br>And Again";
+        }
+        else {
+            obj.innerHTML = obj.innerHTML + "<br>Click Me Again"; //lentrol felfele olvassuk  ^
+        }                                                                                 //  |
+    }
+    </script>
+
+    <div class="divstyle" onmousedown="mDown(this)" onmouseup="mUp(this)">Click Me</div>
+<script>
+    // onmousedown - amikor le van nyomva az egermutato
+    // onmouseup - amikor felengedjuk
+
+    function mDown(obj) {
+        obj.style.backgroundColor = "#1ec5e5";
+        obj.innerHTML = "Release Me"
+    }
+
+    function mUp(obj) {
+        obj.style.backgroundColor = "#D94A38";
+        obj.innerHTML = "Thank You"
+    }
+</script>
+
+</body>
+</html>

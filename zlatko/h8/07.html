@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+
+<script type="text/javascript">
+
+    function myFunction() {
+        var x = document.getElementsByClassName("two");
+        console.log(x);
+        console.log(typeof x);
+        console.log(x.length);
+        x[2].innerHTML="VTS"; //objektumon belul a masodik kulcsu elem
+        console.log(x[2].id);
+
+
+        for (var i = 0; i < x.length; i++) {
+            x[i].style.backgroundColor = "#f00";
+            x[i].innerHTML = "VTS";
+        }
+    }
+
+
+</script>
+
+</head>
+<body>
+
+<p id="first" class="two">first paragraph</p>
+<p id="second" class="two">second paragraph</p>
+<p id="third" class="two">third paragraph</p>
+
+<button onclick="myFunction()">Check it</button>
+</body>
+</html>

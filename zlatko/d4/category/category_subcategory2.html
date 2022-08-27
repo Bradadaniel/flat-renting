@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+    <style>
+        #sub_category {
+            display: none;
+
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        #label2 {
+            display: none;
+        }
+    </style>
+
+
+    <script>
+
+        var sub_category = {first: [1, 2], second: [4, 5], third: [1, 2, 3, 4, 5]};
+
+        window.addEventListener('load', function () {
+
+            let categories = '<option value="choose">choose</option>';
+
+            for (let i in sub_category) { // i értek a subcategory a tomb
+                categories += '<option value="' + i + '">' + i + '</option>';
+            }
+
+            document.getElementById('category').innerHTML = categories;
+
+            document.getElementById('category').addEventListener('change', function () {
+                var text = "";
+                var value = this.value;
+
+                if (value !== 'choose') {
+                    document.getElementById('sub_category').style.display = 'inline';
+
+                    for (let x in sub_category[value]) {
+                        text += '<option value="' + sub_category[value][x] + '">' + sub_category[value][x] + '</option>';
+                    }
+                    document.getElementById('sub_category').innerHTML = text;
+                    document.getElementById('sub_category').disabled = false;
+                    document.getElementById('label2').style.display = 'inline';
+                } else {
+                    document.getElementById('sub_category').disabled = true;
+                    document.getElementById('sub_category').style.display = 'none';
+                    document.getElementById('label2').style.display = 'none';
+                }
+            });
+        });
+
+
+    </script>
+
+</head>
+<body>
+<form name="category_form">
+    <label for="category">category: </label>
+    <select name="category" id="category">
+    </select>
+    <label id="label2" for="sub_category">sub category: </label>
+    <select name="sub_category" id="sub_category"></select>
+    <input type="submit" value="send"/>
+</form>
+
+</body>
+</html>

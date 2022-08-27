@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event 3</title>
+    <script>
+        window.addEventListener('load', init);
+        let mess = '';
+
+        let $ = function (id) {
+            return document.getElementById(id);
+        };
+
+        function init() {
+            let buttons = document.getElementsByTagName("input");
+            //console.log(buttons);
+            for (let i = 0; i < buttons.length; i++) {
+                buttons[i].addEventListener('click', makeIT);
+                buttons[i].addEventListener('click', makeIT2);
+            }
+        }
+
+        function makeIT() {
+            $('message').style.color = '#0f0';
+            mess += "Hello";
+        }
+
+        function makeIT2() {
+            mess += "VTS" + this.value;
+            $('message').innerHTML = mess;
+        }
+    </script>
+</head>
+<body>
+
+<input type="button" value="click1">
+<input type="button" value="click2">
+<input type="button" value="click3">
+
+<div id="message">Hello World!</div>
+
+</body>
+</html>

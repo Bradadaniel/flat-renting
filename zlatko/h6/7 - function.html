@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>function 7</title>
+</head>
+<body>
+<script>
+    var name = "My Name";
+    var email = "my@gmail.com";
+    var course = "Web programming";
+   // var school = "VTS2";
+    function print(message) {
+        document.write(message);
+    }
+    function writeStudentData(name, email, course, school="vts") {
+        if(school == undefined) {
+            return false;
+        }
+        print("name:"+name+"<br>");
+        print("email:"+email+"<br>");
+        print("course:"+course+"<br>");
+        print("school:"+school+"<br>");
+        return true;
+    }
+    var response = writeStudentData(name, email, course);
+    //writeStudentData(name, email, course, school);
+    if(!response) {
+        print('No response!');
+    }
+
+</script>
+</body>
+</html>

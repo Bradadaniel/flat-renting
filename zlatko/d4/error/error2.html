@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript</title>
+</head>
+<body>
+<script>
+    'use strict';
+    var txt = "";
+
+    function calculateFormula(a, b) {
+        return a + b;
+    }
+
+    function message() {
+        let a = 1;
+        let b = 2;
+
+        try {
+            document.write(calculateFormulas(1, 2));
+        } catch (err) {
+            console.error(err);
+            txt = "There was an error on this page.<br>";
+            txt += "Error description: " + err.message + "<br>";
+            document.write(txt);
+            /*
+            Error Name	                Description
+
+            EvalError	                An error has occurred in the eval()
+
+           function https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/eval
+
+            RangeError	                A number "out of range" has occurred
+            ReferenceError	            An illegal reference has occurred
+            SyntaxError	                A syntax error has occurred
+            TypeError	                A type error has occurred
+            URIError	                An error in encodeURI() has occurred
+            */
+        }
+    }
+
+    message();
+
+</script>
+</body>
+</html>

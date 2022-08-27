@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event 4</title>
+    <script>
+
+        window.addEventListener('load', init);
+        let mess = '';
+
+        let $ = function (id) {
+            return document.getElementById(id);
+        };
+
+        function init() {
+            //let buttons = document.querySelectorAll('input[value=click]');
+            let buttons = document.getElementsByTagName('input');
+            //let buttons = document.querySelectorAll('input[type=button]');
+            //let buttons = document.querySelectorAll('input[type=button],input[type=submit]');
+            //let buttons = document.querySelectorAll('input[type=submit]');
+
+            /*for (let i = 0; i < buttons.length; i++) {
+                buttons[i].addEventListener('click', makeIT, false);
+                buttons[i].addEventListener('click', makeIT2, false);
+            }
+*/
+
+
+
+
+
+                    buttons.forEach(element => { //anonim fuggveny
+                        element.addEventListener('click', makeIT, false); //hozzaadja a fugvenyt
+                        element.addEventListener('click', makeIT2, false);
+                    });
+
+            //buttons[buttons.length-1].addEventListener('click',makeIT);
+            //buttons[buttons.length-1].addEventListener('click',makeIT2);
+        }
+
+        function makeIT() {
+            $('message').style.color = '#0f0';
+            mess += "Hello";
+        }
+
+        function makeIT2() {
+            mess += "VTS" + this.value;
+            $('message').innerHTML = mess;
+        }
+    </script>
+</head>
+<body>
+
+<input type="button" value="click">
+<input type="button" value="click">
+<input type="button" value="click me">
+<input type="submit" value="BIG CLICK">
+<input type="submit" value="BIG CLICK2">
+
+
+<div id="message">Hello World!</div>
+
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <!--0-360fok-->
+    <script type="text/javascript">
+        document.write('<table border="1px">');
+        for(var i=0; i<=360; ++i){
+            var rad = i*Math.PI/180; //fok - radianba alaktiasa
+            document.write('<tr><td>',i,'fok =</td><td> radian: ', rad,
+                '</td><td>sin= ',Math.sin(rad),
+                '</td><td>cos= ',Math.cos(rad),
+                '</td><td>tan= ',Math.tan(rad),
+                '</td><td>ctg= ',1/Math.tan(rad),'</td></tr>'
+            );
+        }
+        document.write('</table>');
+    </script>
+</head>
+<body>
+
+</body>
+</html>

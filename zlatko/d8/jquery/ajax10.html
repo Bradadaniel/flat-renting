@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ajax loader</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+        //https://loading.io
+        $(document).ajaxStart(function () {
+            $('.loader').show();
+        });
+
+        $(document).ajaxComplete(function () {
+            $('.loader').hide();
+        });
+        //$(function() {
+        $(document).ready(function () {
+            $('.do-ajax').click(function () {
+                $.ajax({
+                    beforeSend: function () {
+                        //return false;
+                    },
+                    type: "POST",
+                    url: 'loader.php',
+                    cache: false,
+                    success: successFnc,
+                    error: errorFnc,
+                    dataType: 'html'//json
+                });
+            });
+        });
+
+        function successFnc(data, status, xhr) {
+            alert('Success!');
+            $('.loaded-data').html(data);
+        }
+
+        function errorFnc(xhr, status, error) {
+            alert('Error!');
+        }
+    </script>
+
+    <style>
+        .loader {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<button type="button" class="do-ajax">Loading test!</button>
+<div class="loader"><img src="lodaing-1.gif" alt="loading..."></div>
+<div class="loaded-data"></div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+         var str = new String('árviztűrő tükörfúrógép');
+         //document.write(str);
+/*
+         //1.Nagybetu
+         document.write(str.toUpperCase(), '<br />');
+         //2.Kisbetu
+         document.write(str.toLowerCase(), '<br />');
+         //3.Kivagni egy reszt a stringbol  //tukor szo
+         document.write(str.substr(10, 5), '<br />');
+         //4.Kereses tukor szo
+         document.write(str.indexOf('tükör'),'<br />'); //ha -1 az eredmeny nincs benne
+         //5.Kereses utolso eloforduali hely
+         document.write(str.lastIndexOf('r'),'<br />');
+
+         //Valaki megadja a teljes nevet es csak a keresztnevere koszojunk ra.
+*/
+         var nev = new String(prompt('Add meg a neved!'));
+         var x = nev.indexOf(' ')+1;
+         document.write('Szia ',nev.substr(x));
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>function</title>
+</head>
+<body>
+<script>
+    function print(msg)
+    {
+        document.write(msg,"<br>");
+    }
+    print("Hello World");
+
+    document.write("<hr>");
+
+    function myFunction1(a,b)
+    {
+        return a*b;
+    }
+    var k = myFunction1(1,2);
+    var t = print("Not good!");
+    print(t); //undefined
+    document.write(myFunction1(4,3)+"<br>"+k+"<br>");
+
+    document.write("<hr>");
+
+    function myFunction2(a,b)
+    {
+        if (b==0) return; //Ukoliko funkcija izvršava naredbu return bez izraza, ili ako se
+        return a/b;      //  završi zato što se došlo do njenog kraja, vrednost izraza
+                         //  pozivanja funkcije je undefined.
+   }
+    document.write(myFunction2(4,3)+"<br>");
+    document.write(myFunction2(4,0)+"<br>"); //UNDEFINED
+</script>
+
+</body>
+</html>

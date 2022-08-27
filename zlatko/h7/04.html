@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript - 4</title>
+    <script>
+        function randomColor() {
+            colors = ['blue', 'red', 'green', 'yellow', 'aqua', 'aquamarine', 'darkred', 'hotpink', 'orchid', 'orange'];
+            var z = Math.random();
+            console.log(z);
+            z = z * 10;
+            console.log(z);
+            var c = Math.floor(z);
+            console.log(c); //0-9ig valamilyen erteket
+            return colors[c];
+        }
+/*
+https://www.w3schools.com/js/js_random.asp
+*/
+        function col() {
+            var a = randomColor();
+            document.getElementById('id1').style.color = a;
+            document.getElementById('id1').innerHTML = a; //tartalom is valtozni fog, ki fog irodni pl:kek szinnel a blue
+        }
+
+    </script>
+</head>
+<body>
+
+<h1 id="id1">My Heading 1</h1>
+<button type="button" onclick="document.getElementById('id1').style.color=randomColor()">
+    <!--<button type="button" onclick="col()">-->
+    Click Me!
+</button>
+
+</body>
+</html>

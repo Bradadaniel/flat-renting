@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 1</title>
+</head>
+
+<body>
+<script>
+
+    //Ha blokkon belul van meg lehet kivulrol hivni, ha nincs bekapcsola a
+    //use strict- szigoru mod
+
+    var school = "VTS";
+    var city = "024";
+
+    function writeSchool() {
+        var school = "vts2";
+        var city = "Subotica";
+        window.city = "036";  //window a legmagasabb objektum
+        city = "0366";    //felulirta a felso cityt ezert vts2 0366 az elso kiiras
+        document.write(school);
+        document.write(" "+city+"<hr>");
+        student = "Ezekiel";
+    }
+    writeSchool();
+    document.write(school+" "+city);
+    document.write("<hr>"+student);
+
+
+</script>
+
+</body>
+
+</html>

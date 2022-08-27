@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event 9</title>
+    <style>
+        td {
+            border: 1px solid #000;
+            background-color: #e5e5e5;
+            padding: 10px;
+            cursor: pointer
+        }
+
+        td:hover {
+            background-color: #c5c5c5;
+        }
+    </style>
+    <script>
+        /*
+
+         For IE9 and FF you can just use preventDefault & stopPropagation.
+
+         To support IE8 and lower replace stopPropagation with cancelBubble
+         and replace preventDefault with returnValue
+
+         cancelBubble is deprecated, use it only for IE8 and older versions.
+
+         */
+        window.addEventListener('load', init);
+
+        function init() {
+            let table = document.querySelector('#cell');
+            table.addEventListener('click', function (event) {
+                let text = 'click was on ' + event.target.tagName + ' ' + event.target.innerHTML;
+                document.getElementById('text').innerHTML = text;
+            });
+
+        }
+    </script>
+</head>
+<body>
+
+<table id="cell">
+    <tr>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+    </tr>
+    <tr>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+    </tr>
+</table>
+<div id="text"></div>
+</body>
+</html>

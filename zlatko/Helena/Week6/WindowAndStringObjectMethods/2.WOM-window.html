@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WOM-Window</title>
+</head>
+<body>
+
+<button onclick="openWin()">Open "myWindow"</button>
+<button onclick="closeWin()">Close "myWindow"</button>
+<button onclick="moveToWin()">Move To "myWindow"</button>
+<button onclick="moveByWin()">Move By "myWindow"</button>
+<button onclick="resizeByWin()">Resize By window</button>
+<button onclick="resizeToWin()">Resize To window</button>
+
+<script>
+    var myWindow;
+
+    function openWin() {
+        myWindow = window.open("", "myWindow", "width=200,height=100");
+        myWindow.document.write("<p>This is 'myWindow'</p>");
+    }
+
+    function closeWin() {
+        myWindow.close();
+    }
+
+    //moveTo moveTo()
+    function moveToWin() {
+        myWindow.moveTo(500, 100);
+        myWindow.focus();
+    }
+    //moveBy moveBy()
+    function moveByWin() {
+        myWindow.moveBy(250, 250);
+        myWindow.focus();
+    }
+    //resize resizeBy()
+    function resizeByWin() {
+        myWindow.resizeBy(250, 250);
+        myWindow.focus();
+    }
+    // resizeTo()
+    function resizeToWin() {
+    myWindow.resizeTo(250, 250);
+    myWindow.focus();
+    }
+
+</script>
+
+</body>
+</html>

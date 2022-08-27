@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script type="text/javascript">
+
+//1. Milyen szabályok érvényesek az azonosítók (identifikátorok) elnevezésére?
+/*-Az azonosító egy név. A JavaScriptben az azonosítókat
+változók, függvények és címkék (label) elnevezésére
+használjuk.
+Szabályok:
+- Az azonosítóknak betűvel, aláhúzással (_) vagy dollár ($)
+jellel kell kezdődniük, az ezt követő karakter azonban már
+szám (0 .. 9) is lehet.
+- Az azonosító neve nem lehet ugyanaz, mint bármely foglalt
+szó, amelyet más célokra használnak a JavaScriptben.
+
+
+
+2. Mi a literál? Írj példát a függvény típusú literálra.
+-A literálok a JavaScriptben fix értékeket reprezentálnak.
+14
+1.4
+"Subotica Tech"
+'Subotica'
+true
+false
+null
+let alma = function () {document.write("Szia")};
+
+
+3. Írj példát objektum típusú literálra, amely egy programozó adatait tartalmazza (first_name, last_name, company, city, salary, age).
+-Objektum típusú literálok
+var point = {x:2.3, y:-1.2};
+var kep= {width:150, height:250};
+var student={
+name: "John",
+lastname: "Malkovich",
+numberOfIndex: "122039014"
+};
+var student2={name:"Peter",lastname:"Brown",
+numberOfIndex:"122049014"};
+
+
+4. Mi a következő program eredménye?
+
+    var n = 35;
+    var s = n+" workers are in Subotica.";
+    var sv1 = String(n); //átalakitja string 35
+    var sv2 = n.toString(); //szinten
+    document.write(sv1); //kiirja 35
+    document.write(sv2);//kiirja 35
+    document.write(s);//kiirja 35 workers are in Subotica.
+//353535 workers are in Subotica. --kiirja
+
+5. Mi a következő program eredménye?
+*/
+    var x = 500/"vts"; //  +al mukodik csak 500vts kulonben NAN
+    var y = 1000/"100"; //  10
+    var z = 2+"2";
+    document.write(x+"<br />"); //none
+    document.write("y"+"<br />"); //kiirja, hogy y stringbe
+    document.write(typeof(z)+" "+z); //typeof miatt kiirja string "ursehely" 22
+
+
+/*
+  6. Írj példát függvény típusú literálra (legyen a neve teszt),
+    amely az a betű utolsó előfordulásának a pozícióját adja vissza
+    a Madagascar szóból.
+
+var teszt = function (str ,srch){  //8. helyen all az a betu
+    return str.lastIndexOf(srch);
+}
+ console.log(teszt("Madagascar", 'a'))
+
+7. Mi a következő program eredménye?
+
+var k = "024";
+var t = "036";
+var school = "Subotica Tech";
+
+function print(msg)
+{
+    document.write(msg,"<br />");
+}
+
+function myFunction()
+{
+    print(t); //undefined
+    var t = "Subotica"; //subotica
+    print(t);
+    print(k); //024
+    print(school);// Subotica Tech
+    web = "http://www.vts.su.ac.rs";
+}
+myFunction();
+
+print(web); //http://www.vts.su.ac.rs
+print(t); //036
+print(school);//Subotica Tech
+
+
+8. Mi a következő program eredménye?
+
+outerloop: //cimke: amivel megbirod szakitani a fort -Kulso
+        for(var i=0;i<5;i++)
+        {
+            innerloop: //cimke: amivel megbirod szakitani a fort -Belso for ciklus
+                    for(var j=0;j<6;j++)
+                    {
+                        if(j>3) break; //j nagyobb mint 3 megszakad
+                        if(i==2) break innerloop; //ha i==2 megszakitsa a belsot
+                        if(i==4) break outerloop;//ha i==4 megszakitsa a kulsot
+                        document.write("i = "+i+" j = "+j+ "<br />");
+                    }
+        }
+document.write("FINAL i = "+i+ " j = "+j+"<br />");
+// i:0 j:0
+// i:0 j:1
+// i:0 j:2
+// i:0 j:3
+// i:1 j:0
+// i:1 j:1
+// i:1 j:2
+// i:1 j:3
+// i:3 j:0
+// i:3 j:1
+// i:3 j:2
+// i:3 j:3
+//FINAL i:4 j:0
+
+9. Javítsd ki a kódban a hibákat, és írd le, hogy mi lesz a kijavított kód eredménye.
+
+function myFunction4(x,y,z) //nem kell bele x y z
+{
+    for(var i>0;i=arguments.lengh;i++) //i=0 lenght
+        document.writel(i+". argument ="+argument[$i+"<br />"); //writeln, arguments,argument[$i+ = be kelle zarni, dollar jel nem kell, br /> = nem kell /-jel
+
+}
+
+
+myfunction4(1,2); //nagy F, rosszul hivta meg
+document.write("<hr />");
+MyFunction4(1,2,3,4,5); //rosszul hivta meg
+
+
+function myFunction4()
+{
+    for(var i=0;i<arguments.length;i++)
+    document.writeln(i+". arguments ="+arguments[i]+"<br>");
+
+}
+
+
+myFunction4(1,2);
+document.write("<hr>");
+myFunction4(1,2,3,4,5);
+
+10.  Mi a következő program eredménye?
+
+
+
+window.addEventListener('load',init); //addEventListener- esemeny tudsz hozzaadni ('Mi tortenjen', fuggveny)
+
+function init()
+{
+document.querySelector('body').addEventListener('click', function(e) {
+    alert('body clicked');
+    e.preventDefault(); //ha itt van semmit nem csinal, ha nincs itt akkor atiranyit
+});
+
+document.querySelector('#nDemo a').addEventListener('click', function() { //diven beluli a-hoz hozza rendel egy klikket es //Ha kattintasz alertel vagy body klikkel a felsonel
+    alert('a clicked');
+});
+
+}
+
+
+11. Írd meg azt a programkódot,
+amely két masodpercenként egy Hello World üzenetet (alert) jeleníti meg.
+
+let timeres = function (){
+    alert("Hello world!")
+}
+
+setInterval(timeres, 2000)
+
+
+
+
+
+12. Magyarázd el a következő kódot:
+*/
+/*
+ window.addEventListener('load',init);
+
+    var $ = function(id)
+    {
+        return document.getElementById(id);
+    }
+
+    function init()
+    {
+        $('b1').addEventListener('click',makeIT);
+        $('b1').addEventListener('dblclick',makeIT2);
+    }
+// a windows objektumhoz hozzarendeli a betoltes pillanatakor az init fuggvenyt,
+// a $ annonim fuggveny a jq-ben hasznalt $('') stilust regisztralja.
+//az init fuggveny a b1-idju elemez hozzarendeli a makeIT fuggvenyt a click esemenyre
+//es a makeIT2 a dupla klikk esemenyre
+
+13. Mire használjuk a következő metódusokat:
+
+querySelectorAll() //- az osszes elemet kivalasztja egy tombe, egy css selector alapjan.
+getElementsByTagName() //- az elemeket a tagnevuk alapjan valasztjuk ki, pl: input, p ,sup
+querySelector() //-Az elso elemet valasztja ki ami megfelel a felteteleknek. szinten css selector alapu.
+stopPropagation() //-Ha egy belso elemre kattintunk, es nem fog visszafele minden parent elem vegigmenni. //Ha egy diven belul linkre kat, nem fog visszefele kirini a divnek vagy a bodynak, csak a legbelsonek(amire rateszed)
+preventDefault() //-megakadalyozza az eredeti esemenyt. pl: egy link eseten nem iranyit at.
+
+*/
+</script>
+</head>
+<body>
+
+
+</body>
+</html>

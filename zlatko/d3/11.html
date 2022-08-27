@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event 6</title>
+    <script>
+        /*
+
+        All events are executed from inside to outside, and finally the default browser action
+        is executed: event bubbling.
+
+        If you just want to prevent the browser action, call preventDefault() anywhere along the route:
+
+         If you want to stop bubbling, call stopPropagation():
+
+         If you want to stop both, call both:
+
+         e.stopPropagation();
+         e.preventDefault();
+
+
+         Event bubbling and capturing are two ways of event propagation in the HTML DOM API, when an event occurs in
+         an element inside another element, and both elements have registered a handle for that event. ...
+         With capturing, the event is first captured by the outermost element and propagated to the inner elements.
+
+         If an element has multiple event handlers on a single event, then even if one of them stops the bubbling,
+         the other ones still execute.
+
+         In other words, event.stopPropagation() stops the move upwards, but on the current element all other handlers
+         will run.
+
+         To stop the bubbling and prevent handlers on the current element from running, there’s a
+         method event.stopImmediatePropagation(). After it no other handlers execute.
+
+         element.addEventListener(event, function, useCapture)
+
+         useCapture = Optional. A Boolean value that specifies whether the event should be executed in the capturing or
+         in the bubbling phase.
+
+         Possible values:
+
+         true - The event handler is executed in the capturing phase
+         false- Default. The event handler is executed in the bubbling phase
+
+      */
+        window.addEventListener('load', init);
+
+        function init() {
+
+            document.querySelector('#nDemo').addEventListener('click', function () { //# -azt ertelmezi, hogy az nDemo idre hivatkozik
+                alert('div clicked');
+            }, true);
+            document.querySelector('#nDemo img').addEventListener('click', function (e) {
+                alert('img clicked');
+                e.stopPropagation();
+                e.preventDefault();
+            });
+
+            //    element.addEventListener(event, function, useCapture)
+            document.querySelector('body').addEventListener('click', function () {
+                alert('body clicked');
+                //e.stopPropagation();
+                //e.preventDefault();
+            });
+            document.querySelector('#nDemo a').addEventListener('click', function () {
+                alert('a clicked');
+            });
+
+
+        }
+
+
+    </script>
+</head>
+<body>
+
+<div id="nDemo">
+    <a href="http://www.vts.su.ac.rs">
+        <img src="https://www.vts.su.ac.rs/data/slides/2018/22_slajd-2-16.jpg" alt="slider image">
+    </a>
+</div>
+<br>
+TEXT
+</body>
+</html>

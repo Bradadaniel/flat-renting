@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <style>
+        input {
+            margin: 15px 0;
+        }
+        button{
+            margin: 15px 0;
+        }
+    </style>
+
+</head>
+<body>
+<form>
+    <label for="name">Name: </label>
+    <input type="text" id="name" minlength="3">
+    <br>
+    <label for="email">Email: </label>
+    <input type="text" id="email" minlength="3">
+    <br>
+    <label for="address">Address: </label>
+    <input type="text" id="address" minlength="3">
+    <br>
+    <label>Operation System: </label>
+
+    <select>
+        <option disabled hidden selected>Choose</option>
+        <option>Win</option>
+        <option>Lin</option>
+        <option>Mac</option>
+        <option>Ios</option>
+        <br>
+    </select>
+    <br>
+        <button onclick="button1">Send</button>
+        <button>Cancel</button>
+
+</form>
+    <script>
+        var text;
+
+        function send() {
+            var name = document.getElementById('name').value;
+            var email = document.getElementById('email').value;
+            var address = document.getElementById('address').value;
+
+            if(email.length == 0 || name.length == 0 || address.length == 0 ){
+                alert("Toltson ki minden mezot");
+            }
+            else{
+                if (email.length>=3 && name.length>=3 && address.length>=3)
+                {
+                    alert("Name: " + name);
+                    alert("Email: " + email);
+                    alert("Address: " + address);
+                }
+                else{
+                    alert("Minimum 3 karaktert!");
+                }
+            }
+        }
+
+    </script>
+
+
+</body>
+</html>

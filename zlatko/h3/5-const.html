@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>1 - constants</title>
+
+    <script>
+        // define MY_FAV as a constant and give it the value 7
+        const MY_FAV = 7;
+
+        // this will throw an error
+        //MY_FAV = 20;
+        // This will also give an error
+        //MY_FAV = MY_FAV + 10;
+
+        // will print 7
+        console.log('my favorite number is: ' + MY_FAV);
+
+        // trying to redeclare a constant throws an error
+        // const MY_FAV = 20;
+
+        // the name MY_FAV is reserved for constant above, so this will also fail
+        // var MY_FAV = 20;
+
+        // this throws an error also
+        // let MY_FAV = 20;
+
+        // it's important to note the nature of block scoping
+        if (MY_FAV === 7) { //erteke es a tipusa is egyenlo
+            // this is fine and creates a block scoped MY_FAV variable
+            // (works equally well with let to declare a block scoped non const variable)
+            const MY_FAV = 20;
+
+            // MY_FAV is now 20
+            console.log('my favorite number is ' + MY_FAV);
+
+            // this gets hoisted into the global context and throws an error
+            // var MY_FAV = 20;
+        }
+
+        // MY_FAV is still 7
+        console.log('my favorite number is ' + MY_FAV);
+
+        if(10<20) {
+            const language = 'JS!';
+            document.write(language+"<br>");
+        }
+        var language = 'JS';
+        document.write(language + "<br>");
+
+        //Incorrect
+        //const PI; //Uncaught SyntaxError: Missing initializer in const declaration
+        //PI = 3.14159265359;
+        //console.log('PI is ' + PI);
+
+        //Correct
+        const PI = 3.14;
+        console.log('PI is ' + PI);
+
+        // You can create a const object:
+        const car = {type:"Fiat", model:"500", color:"white"};
+
+        // You can change a property:
+        car.color = "red";
+
+        // You can add a property:
+        car.year = 2019;
+        console.log(car);
+
+        //ERROR
+        //const car1 = {type:"Fiat", model:"500", color:"white"};
+        //car1 = {type:"Volvo", model:"EX60", color:"red"};
+        //console.log(car1);
+
+        //Constant Arrays can Change
+        // You can create a constant array:
+        const cars = ["Saab", "Volvo", "BMW"];
+
+        // You can change an element:
+        cars[0] = "Toyota";
+
+        // You can add an element:
+        cars.push("Audi");
+
+        document.write(cars + "<br>");
+
+        // ERROR
+        //const cars = ["Saab", "Volvo", "BMW"];
+        //cars = ["Toyota", "Volvo", "Audi"];
+    </script>
+</head>
+<body>
+</body>
+</html>

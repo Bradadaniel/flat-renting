@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>function 3</title>
+</head>
+<body>
+ <script>
+     function mapIt(f, a) {
+         var result = [];
+         var i;
+         for (i = 0; i != a.length; i++)
+             result[i] = f(a[i]);
+         return result;
+     }
+     var f = function(x) {
+         return x * x * x;
+     }
+     var numbers = [0, 1, 2, 4, 10];
+     var cube = mapIt(f,numbers);
+     console.log(cube);
+ </script>
+</body>
+</html>

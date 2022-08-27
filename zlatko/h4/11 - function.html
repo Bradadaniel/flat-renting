@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>function 3</title>
+</head>
+<body>
+<script>
+    var k = "024";
+    var t = "036";
+    var school = "Subotica Tech";
+    function print(msg)
+    {
+        document.write(msg,"<br>");
+    }
+    function myFunction()
+    {
+        print(t);
+        var t = "Subotica"; //let: ReferenceError: can't access lexical declaration `t' before initialization
+        print(t);
+        print(k);
+        print(school);
+        web = "http://www.vts.su.ac.rs";
+    }
+    myFunction();
+    print("<hr>");
+
+    print(web);
+    print(t);
+    print(school);
+</script>
+
+</body>
+</html>

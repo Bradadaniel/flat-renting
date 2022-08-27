@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>function 2</title>
+</head>
+<body>
+<script>
+    function print(msg)
+    {
+        document.write(msg,"<br>");
+    }
+
+    function myFunction3(x,y,z)
+    {
+        if(arguments.length!=3)
+            return "The function is not called with three arguments!"
+        return x+y+z;
+    }
+    print(myFunction3(1,2,3));
+    print(myFunction3(1,2));
+    print("<hr>");
+
+    function myFunction4(x,y,z)
+    {
+        for(let i=0;i<arguments.length;i++)
+            print(i+". argument ="+arguments[i]);
+    }
+
+    myFunction4(1,2);
+    print("<hr>");
+    myFunction4(1,2,3,4,5,6,7);
+
+</script>
+
+</body>
+</html>

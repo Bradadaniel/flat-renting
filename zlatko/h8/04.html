@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+<head>
+    <title>JavaScript</title>
+<script type="text/javascript" >
+    function validateForm(message)
+    {
+        var forma = document.forms.register;
+        //var error = true;
+
+        if (forma.name.value == '' || forma.email.value == '' || forma.address.value == '' || forma.os.value == 'choose')
+        {
+            alert(message);
+            return false;
+        }
+        else
+            return true;
+    }
+</script>
+</head>
+<body>
+<form name="register" onsubmit="return validateForm('Fill all fields!');" action="database.php" method="get">
+<label>Name</label>: <input type="text" name="name"  /><br><br>
+<label>E-mail</label>: <input type="text" name="email"  /><br><br>
+<label>Address</label>: <input type="text" name="address"  /><br><br>
+<label>Operation system</label>:
+<select name="os" size="1">
+<option value="choose">- choose -</option>
+<option value="windows">windows</option>
+<option value="linux">linux</option>
+</select>
+<br><br>
+
+<input type="submit" value="send" >
+<input type="reset" value="cancel" >
+
+</form>
+<p id="error"></p>
+</body>
+</html>
+

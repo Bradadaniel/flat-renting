@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>for</title>
+    <script>
+
+       var myArray = new Array(10);
+
+        myArray[0] = 10;
+        myArray[3] = 30;
+        myArray[5] = 50;
+        myArray[8] = 80;
+
+        for(var i=0; i<myArray.length; i++) {
+            document.write("the value of myArray[" + i + "]: " + myArray[i] + " type: " + typeof myArray[i] + "<br>");
+        }
+
+        var cars=["BMW","Volvo","Saab","Ford"];
+        var i=0;
+        for (;cars[i];)
+        {
+            document.write(cars[i]+"<br>");
+            i++;
+        }
+    </script>
+</head>
+<body>
+</body>
+</html>

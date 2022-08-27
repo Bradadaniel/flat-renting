@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript - 6</title>
+</head>
+<body>
+
+<p>Click the button to execute the <em>displayDate()</em> function.</p>
+
+<button id="myBtn">Try it</button>
+
+<script>
+    document.getElementById("myBtn").onclick = displayDate; //pl:Tue Apr 12 2022 08:55:50 GMT+0200 (közép-európai nyári idő)
+    function displayDate() {
+        var date = new Date();
+        console.log(date.getFullYear()); //aktualis ev
+        document.getElementById("date").innerHTML = date;
+        // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date
+    }
+</script>
+
+<p id="date"></p>
+
+</body>
+</html>

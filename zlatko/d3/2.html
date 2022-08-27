@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 2</title>
+</head>
+<body>
+
+<h1 id="message"><i>Hello World</i></h1>
+
+<p class="echo">first</p>
+<p>second</p>
+<p class="echo">third</p>
+
+<h2 class="echo">JavaScript 2</h2>
+
+
+<form method="post" name="forma" action="login.php">
+
+    <label for="username">Username:</label>
+    <input type="text" name="username" id="username"> (minimum length is 8 characters) <br>
+    <input type="submit" value="send">
+
+</form>
+<script>
+    let v1 = document.getElementById("message"); //kiir mindent
+    console.log(v1);
+
+    let v2 = document.getElementsByTagName("p"); //logolas
+    console.log(v2);
+
+    let v3 = document.getElementsByClassName("echo");
+    console.log(v3);
+
+    let v4 = document.getElementsByName("forma");
+    console.log(v4);
+
+    let v5 = document.querySelector(".echo"); //barmely selector hasznalhato
+    console.log(v5);
+
+    let v6 = document.querySelectorAll(".echo");
+    console.log(v6);
+
+    let v7 = document.querySelectorAll("input[type='text']"); //osszes imputot aminek a tipusa text
+    console.log(v7);
+
+    let v8 = document.getElementById("message").innerHTML; //message idnek az inner htmle <i>hello world</i>
+    console.log(v8);
+
+    let v9 = document.getElementById("message").innerText; // itt meg csak hello world
+    console.log(v9);
+
+</script>
+</body>
+</html>

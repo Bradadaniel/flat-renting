@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    //Feltoltes kilistazas
+    <script type="text/javascript">
+
+        function feltolt(tomb){
+            for (i=0;i<100;++i){
+                tomb.push(Math.floor(Math.random()*100)+1); //feltolti random szamokkal 1es 100kozott
+            }
+        }
+
+        function kilistaz(tomb){
+            for(var i=0;i<tomb.length;++i){
+                document.write('A tomb', i+1,'. eleme: ',tomb[i],'<br />');
+            }
+        }
+
+
+        var tomb = new Array();
+        feltolt(tomb);
+        kilistaz(tomb);
+
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

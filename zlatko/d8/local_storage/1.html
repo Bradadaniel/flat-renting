@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Local storage</title>
+</head>
+<body>
+
+<div id="results"></div>
+
+<script>
+
+    // Check browser support
+    if (typeof(Storage) !== "undefined") {
+        localStorage.setItem("language", "JavaScript");
+        document.getElementById("results").innerHTML = localStorage.getItem("language");
+        localStorage.setItem("language2", "PHP");
+        //localStorage.removeItem("language2");
+        //localStorage.clear();
+    } else {
+        document.getElementById("results").innerHTML = "Sorry, your browser does not support Web Storage...";
+    }
+
+</script>
+</body>
+</html>

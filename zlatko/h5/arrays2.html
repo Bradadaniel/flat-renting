@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Arrays 2</title>
+    <script>
+
+        var myArray2 = ['PHP', 'mySql', 'JavaScript', 'Laravel', 'PHP', 'VueJs'];
+        var myFilteredArray = myArray2.filter(function(item){if(item.length > 5) {return true} }); //filter: szurot tesz ra
+        console.log(myFilteredArray, myArray2);
+
+        var myMap = myArray2.map(function(item){return item.toLowerCase()});
+        console.log(myMap, myArray2);
+
+        var arr = ['apple','orange','pear'];
+        var exists = false;
+        if(arr.indexOf('orangea') >= 0) { exists = true };
+        alert(exists);
+
+        var arr1 = [
+            {"name":"apple", "count": 2},
+            {"name":"orange", "count": 5},
+            {"name":"pear", "count": 3},
+            {"name":"orange", "count": 16},
+        ];
+
+        var oranges = arr1.filter(function(item) { return item.name == 'orange' });
+        console.log(oranges);
+
+        var oldArr = [
+            {first_name:"Albert",last_name:"Einstein"},
+            {first_name:"Nikola",last_name:"Tesla"},
+            {first_name:"Robert",last_name:"Oppenheimer"}
+        ];
+
+        var myNewArray = oldArr.map(function(item) {
+            item.full_name = [item.first_name, item.last_name].join(" ");
+            //item.first_name + " " + item.last_name
+            return item;
+        });
+
+        console.log(myNewArray);
+    </script>
+</head>
+<body>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>JavaScript 1</title>
+</head>
+
+<body>
+<form name="comment" action="2.php" method="post">
+    <label for="user">username:</label> <input type="text" name="username" value="VTS" id="user">
+    <script>
+        function test() {
+            let test = document.forms; //van egy fuggveny a formon belul ami a test
+            console.log(test);
+            let forma = document.forms.comment; //egyenlo a formal aminek a neve comment
+            let field1 = document.comment.username.value;
+            let field2 = document.forms["comment"].username.value;
+            let field3 = forma.username.value;
+            let field4 = forma["username"].value;
+            let field5 = document.getElementById("user").value; //id alapjan hivja meg
+
+            console.log(document.getElementById("user"));
+
+
+            document.write("<br>field1=" + field1 + "<br>");
+            document.write("field2=" + field2 + "<br>");
+            document.write("field3=" + field3 + "<br>");
+            document.write("field4=" + field4 + "<br>");
+            document.write("field5=" + field5 + "<br>");
+
+            document.write("type=" + forma.username.type + "<br>"); //kiirja a tipusat - text
+            document.write("name=" + forma.username.name + "<br>"); //nevet - username
+            document.write("id=" + forma.username.id + "<br>"); //idt- user
+            forma.username.value = "VTS2"; megvaltoztassa
+        }
+
+        test();
+
+    </script>
+    <input type="reset" name="rd" value="reset">
+</form>
+</body>
+</html>

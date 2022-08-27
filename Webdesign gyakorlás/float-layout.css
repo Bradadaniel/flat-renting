@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Roboto:wght@400;700&display=swap');
+
+*{
+   box-sizing: border-box;
+}
+body{
+    font-family: 'Lato', sans-serif;
+
+    margin: 0;
+    background: url("img/bg.jpg") fixed;
+}
+header{
+    background: url("img/bg1.jpg");
+    color: #fff;
+    font-size: 80px;
+    font-weight: 700;
+    padding: 80px 60px;
+    text-shadow: 0 0 20px rgba(0,0,0,.8);
+/*    szoveg elmosas*/
+}
+.container{
+    width: 1000px;
+    margin: 0 auto;
+}
+.content{
+    background: #7d0000;
+}
+.content::after,
+footer::after{
+    content: "";
+    clear: both;
+    display: table;
+/*    ez a clearfix a floatokra*/
+}
+nav{
+    width: 25%;
+/*    rendelkezesre allo hely 25%-at hasznalja ki*/
+    float: left;
+/*    lebegtetes - ha van elegendo hely egymas melle lehet helyezni elmeeket*/
+/*figyelni kell a float miatt a felcsuszasra*/
+/*clearfix*/
+}
+nav ul{
+    margin: 0;
+    padding: 30px;
+    list-style: none;
+}
+nav ul li{
+    border-bottom: 1px dashed rgba(255,255,255,.2);
+}
+nav a{
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 0;
+/*    Mivel jelenleg gyarilag display inline van rajta ezert nem mukodne a padding
+meg kell valtoztatni*/
+    display: block;
+}
+nav a:hover{
+    padding: 15px;
+    background: rgba(255,255,255,.1);
+}
+main{
+    width: 75%;
+    background: #fff;
+    float: left;
+    padding: 30px;
+}
+main p{
+    line-height: 23px;
+}
+.float-left{
+    width: 400px;
+    height: 200px;
+    float: left;
+    margin: 0 20px 20px 0;
+}
+.float-right{
+    float: right;
+    width: 400px;
+    height: 200px;
+    margin: 0 0 20px 20px;
+}
+
+footer{
+    padding: 20px 0;
+    background: #4d4d4d;
+}
+footer a{
+    color: #000;
+}
+footer .left{
+    float: left;
+}
+footer .right a{
+    float: right;
+    justify-content: space-between;
+}
+
+h1{
+    margin-top: 0;
+}
+h1 span{
+    font-size: 50px;
+
+    background: #0079a1;
+    color: #fff;
+    /*    box decoration break
+    -akkora lesz a hatter szin mint maga a szoveg*/
+
+    -webkit-box-decoration-break: clone;
+    -o-box-decoration-break: clone;
+    box-decoration-break: clone;
+    border-left: 10px solid #0079a1;
+    border-right: 10px solid #0079a1;
+    border-bottom: 10px solid #0079a1;
+    line-height: 75px;
+}
+
