@@ -56,6 +56,8 @@ $type = $stmt->fetchAll();
         <a href="login.php" class="btn">login</a>
         <a href="register.php" class="btn">register</a>
         <a href="logout.php" class="btn">logout</a>
+        <a href="messages.php" class="btn">Üzenetek</a>
+        <a href="messages.php" class="btn">Adatok módositása</a>
     </div>
 </div>
 
@@ -126,12 +128,14 @@ $type = $stmt->fetchAll();
     </div>
 
     <?php
-
-    $sql = "SELECT * FROM products ";
+//$_SESSION['user_id']
+    $sql = "SELECT * FROM products WHERE user_id= :user_id";
     $stmt = $connect->prepare($sql);
+    $stmt->bindParam(':user_id', $_SESSION['user_id']);
     $stmt->execute();
     $stmt->setFetchMode(PDO::FETCH_ASSOC);
     $result = $stmt->fetchAll();
+
 
     //    delete
     if (isset($_GET['delete'])){

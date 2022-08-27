@@ -53,6 +53,7 @@
     flex-wrap: wrap;
     justify-content: center;
     background: linear-gradient( darkblue,#448aba);
+    padding: 10px 0;
 }
 .product-button button{
     padding: 10px 10px;

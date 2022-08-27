@@ -55,7 +55,7 @@ session_start();
 
 
 <div class="container" id="Catalog">
-    <form class="product-search" method="post">
+    <form class="product-search" id="product-search" method="post">
         <input style="width: 50%" placeholder="Kereső" name="search" id="search_input" type="text">
         <button id="search_button" type="submit">Keresés</button>
     </form>

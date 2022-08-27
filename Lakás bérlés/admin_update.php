@@ -24,38 +24,7 @@ $stmt = $connect->prepare($sql);
 $stmt->execute();
 $type = $stmt->fetchAll();
 
-
-
-
-
-if (isset($_POST['update_product'])) {
-    $id = $_POST['id'];
-    $user_id = $_POST['user_id'];
-    $city_id = $_POST['city_id'];
-    $size = $_POST['size'];
-    $price = $_POST['price'];
-    $bedroom = $_POST['bedroom'];
-    $bathroom = $_POST['bathroom'];
-    $location = $_POST['location'];
-    $floor = $_POST['floor'];
-    $elevator = $_POST['elevator'];
-    $type = $_POST['type'];
-    $parking = $_POST['parking'];
-    $date = $_POST['date'];
-
-    $pdoquery = "UPDATE products SET user_id=:user_id, city_id=:city_id, size=:size, price=:price, bedroom=:bedroom, bathroom=:bathroom, location=:location, floor=:floor, elevator=:elevator, type=:type, parking=:parking, date=:date WHERE id=:id"; //LIMIT 1
-    $pdoquery_run = $connect->prepare($pdoquery);
-    $pdoquery_exec = $pdoquery_run->execute(array(":user_id" => $user_id, ":city_id" => $city_id, ":size" => $size, ":price" => $price, ":bedroom" => $user_id, ":bathroom" => $bathroom, ":location" => $location, ":elevator" => $elevator, ":type" => $type, ":parking" => $parking, ":date" => $date, ":id" => $id));
-
-
-    if ($pdoquery_exec) {
-        echo '<script>alert("A lakás szerkesztve")</script>';
-        header("Refresh: 2");
-    } else {
-        echo '<script>alert("A lakás szerkesztése sikertelen")</script>';
-        header("Location: index.php");
-    }
-}
+var_dump($_POST);
 ?>
 
 <!DOCTYPE html>
@@ -80,7 +49,7 @@ if (isset($_POST['update_product'])) {
 
 
 
-<script src="script.js"></script>
+<script src="update.js"></script>
 <div class="container">
     <div class="admin-product-form-container centered">
 
@@ -92,7 +61,7 @@ if (isset($_POST['update_product'])) {
         $stmt->setFetchMode(PDO::FETCH_ASSOC);
         $result3 = $stmt->fetchAll();
         ?>
-        <form onsubmit="check()"  id="form1" name="form1"  method="post" enctype="multipart/form-data">
+        <form onsubmit="check()"  id="form1" name="form1"  method="post" enctype="multipart/form-data" action="admin_update.php">
             <h3>Lakás feltöltése</h3>
 
 
@@ -145,16 +114,57 @@ if (isset($_POST['update_product'])) {
             <span style="color: red" class="error" id="errSelect11"></span><br>
             <input type="date" id="date" name="date" class="box" value="<?php echo $result3[0]['date']?>">
 
-            <input type="submit" class="add-btn" name="update_product" id="update_product"  value="Lakás szerkesztése">
+            <input type="hidden" name="update_product" id="update_product" value="update">
+            <input type="submit" class="add-btn"   value="Lakás szerkesztése">
+
             <a href="admin.php"class="btn">Vissza</a>
-
-
         </form>
 
     </div>
 
 </div>
+<?php
+if (isset($_POST['update_product'])&& $_POST['update_product']=='update'){
+$id=$_GET['id'];
+$user_id = $_POST['user_id'];
+$city_id = $_POST['city_id'];
+$size = $_POST['size'];
+$price = $_POST['price'];
+$bedroom = $_POST['bedroom'];
+$bathroom = $_POST['bathroom'];
+$location = $_POST['location'];
+$floor = $_POST['floor'];
+$elevator = $_POST['elevator'];
+$type = $_POST['type'];
+$parking = $_POST['parking'];
+$date = $_POST['date'];
+
+$sql = "UPDATE products SET user_id=:user_id, city_id=:city_id, size=:size, price=:price, bedroom=:bedroom, bathroom=:bathroom, location=:location, floor=:floor, elevator=:elevator, type=:type, parking=:parking, date=:date WHERE id=:id";
+    $query = $connect->prepare($sql);
+    $query->bindParam(':id', $id, PDO::PARAM_STR);
+    $query->bindParam(':city_id', $city_id, PDO::PARAM_STR);
+    $query->bindParam(':user_id', $user_id, PDO::PARAM_STR);
+    $query->bindParam(':size', $size, PDO::PARAM_STR);
+    $query->bindParam(':price', $price, PDO::PARAM_STR);
+    $query->bindParam(':bedroom', $bedroom, PDO::PARAM_STR);
+    $query->bindParam(':bathroom', $bathroom, PDO::PARAM_STR);
+    $query->bindParam(':location', $location, PDO::PARAM_STR);
+    $query->bindParam(':floor', $floor, PDO::PARAM_STR);
+    $query->bindParam(':elevator', $elevator, PDO::PARAM_STR);
+    $query->bindParam(':type', $type, PDO::PARAM_STR);
+    $query->bindParam(':parking', $parking, PDO::PARAM_STR);
+    $query->bindParam(':date', $date, PDO::PARAM_STR);
+    if ($query->execute()) {
+        echo '<script>alert("A lakás szerkesztve")</script>';
+        header("Refresh: 2");
+    } else {
+        header("Location: admin.php");
+    }
+}
+
+
+?>
 
 </body>
 </html>
-<?php
+

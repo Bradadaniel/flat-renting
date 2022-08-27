@@ -16,4 +16,6 @@ if (!empty($_POST['search'])) {
     ]);
     $result = $stmt->fetchAll();
 }
+
+
 ?>

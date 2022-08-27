@@ -84,12 +84,13 @@ if (!empty($_GET['product']) ){
                 <div class="product-button">
                 <br><br>
                 <h5 style="color: red">Felhasználó: ' . $result3 . '</h5>
-                <h5>Elérés: ' . $result4 . '</h5>
+                <h5>Elérés: <a href="mailto: ' . $result4 . '"> ' . $result4 . '</a></h5>
                 <h5>Utca: ' . $value['location'] . '</h5>
                 <h5>Emelet: ' . $value['floor'] . '</h5>
                 <h5>Lift: ' . $value['elevator'] . '</h5>
                 <h5>Parking: ' . $value['parking'] . '</h5>
                 <h5>Kiadás kezdete: ' . $value['date'] . '</h5>
+                <a href="renting.php"><button>Üzenet küldése</button></a>
                 <a href="products.php"><button>Vissza</button></a>
                 </div>
                 

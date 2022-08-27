@@ -251,6 +251,48 @@ $type = $stmt->fetchAll();
 
    ?>
 
+<?php
+$sql = "SELECT * FROM user_form ";
+$stmt = $connect->prepare($sql);
+$stmt->execute();
+$stmt->setFetchMode(PDO::FETCH_ASSOC);
+$users = $stmt->fetchAll();
+
+if (isset($_GET['delete'])){
+    $id= $_GET['delete'];
+    $sql = "DELETE FROM user_form WHERE id=$id";
+    $stmt= $connect->prepare($sql);
+    $stmt->execute([]);
+}
+?>
+<div class="product-display">
+    <table class="product-display-table">
+        <thead>
+        <tr>
+            <th>Felhasználó neve</th>
+            <th>Email</th>
+            <th>Tipus</th>
+            <th colspan="2">Művelet</th>
+        </tr>
+        </thead>
+        <?php
+        foreach ($users as $value) {
+            echo  '<tr>
+                            <td>' . $value['name'] . '</td>
+                            <td>' . $value['email'] . '</td>
+                            <td>' . $value['user_type'] . '</td>
+
+                            <td colspan="2">
+                            <a href="admin_update.php?id='.$value['id'].'" type="submit"value="' . $value['id'] . '" class="btn"><i class="bx bx-edit-alt"></i> Szerk.</a>
+                            <a href="admin.php?delete='.$value['id'].'" type="submit"  value="' . $value['id'] . '" class="btn"><i class="bx bx-trash"></i>BAN</a>
+                            </td>
+                     </tr>';
+        }
+        ?>
+
+    </table>
+</div>
+</div>
 
 </body>
 </html>
